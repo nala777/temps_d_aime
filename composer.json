@@ -1,0 +1,15 @@
+{
+    "name": "kercode/temps_d_aime",
+    "autoload": {
+        "psr-4": {
+            "Kercode\\TempsDAime\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alan ADAM",
+            "email": "alan.adam0197@gmail.com"
+        }
+    ],
+    "require": {}
+}
