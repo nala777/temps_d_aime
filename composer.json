@@ -2,7 +2,7 @@
     "name": "kercode/temps_d_aime",
     "autoload": {
         "psr-4": {
-            "Kercode\\TempsDAime\\": "src/"
+            "Projet\\": "./app/"
         }
     },
     "authors": [
@@ -11,5 +11,7 @@
             "email": "alan.adam0197@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    }
 }
