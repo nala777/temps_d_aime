@@ -29,6 +29,8 @@ class FrontController
 
     function blog()
     {
+        $article = new \Projet\Models\BlogModel();
+        $articles = $article->afficheArticle();
         require "app/Views/Front/blog.php";
     }
 

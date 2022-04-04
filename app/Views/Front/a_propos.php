@@ -1,5 +1,5 @@
 <?php ob_start(); ?>
-<div class="container">
+<div>
     <?php foreach($allPropos as $propos){ ?>
         <div class="a_propos">
             <img class="img_propos" src="<?= ($propos['image']) ?>" alt="<?= ($propos['descriptif_image'])?>">

@@ -2,7 +2,7 @@
 
 namespace Projet\Controllers;
 
-class adminControllefa
+class AdminController
 {
     function pageAdmin()
     {
