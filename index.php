@@ -30,6 +30,18 @@ try{
         elseif($_GET['action'] == 'contact'){
             $frontController->contact();
         }
+
+        elseif($_GET['action'] == 'contactPost'){
+            $name = htmlspecialchars($_POST['name']);
+            $mail = htmlspecialchars($_POST['mail']);
+            $subject = htmlspecialchars($_POST['subject']);
+            $content = htmlspecialchars($_POST['content']);
+            if (!empty($name) && (!empty($mail) && (!empty($subject) && (!empty($content))))) {
+                $frontController->contactPost($name, $mail, $subject, $content);
+            }else{
+                throw new Exception('Tous les champs ne sont pas remplis');
+            }
+        }
     }else{
         $frontController->accueil();
     }
