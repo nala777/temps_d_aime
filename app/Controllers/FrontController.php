@@ -19,6 +19,8 @@ class FrontController
 
     function services()
     {
+        $services = new \Projet\Models\ServicesModel();
+        $allServices = $services->afficheServices();
         require "app/Views/Front/services.php";
     }
 

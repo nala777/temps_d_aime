@@ -4,14 +4,6 @@ namespace Projet\Models;
 
 class BlogModel extends TempsDaimeOrm
 {
-    // public $id;
-    // public $image;
-    // public $desciptif_image;
-    // public $categorie;
-    // public $date;
-    // public $titre;
-    // public $texte;
-
     public function afficheArticle()
     {
         $bdd = $this->connect();

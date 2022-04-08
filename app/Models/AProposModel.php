@@ -4,11 +4,6 @@ namespace Projet\Models;
 
 class AProposModel extends TempsDaimeOrm
 {
-    // public $id;
-    // public $image;
-    // public $descriptif_image;
-    // public $titre;
-    // public $texte;
 
     public function affichePropos()
     {
