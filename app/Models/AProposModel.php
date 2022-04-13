@@ -11,6 +11,8 @@ class AProposModel extends TempsDaimeOrm
         $req = $bdd->query("SELECT id,image,descriptif_image,titre,texte FROM a_propos");
         return $req;
     }
+
+
 }
 
 ?>

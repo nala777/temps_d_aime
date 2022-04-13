@@ -1,5 +1,7 @@
 <?php ob_start(); ?>
-<h1>Erreur</h1>
+<main>
+    
+</main>
 <?php $content = ob_get_clean(); ?>
-<?php $title = "Erreur" ?>
+<?php $title = "A propos Blog" ?>
 <?php require 'templates/template.php' ?>

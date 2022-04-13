@@ -6,7 +6,24 @@ class FrontController
 {
     function accueil()
     {
+        $accueil = new \Projet\Models\AccueilModel();
+        $proposAccueil = $accueil->afficheProposAccueil();
+        $servicesAccueil = $accueil->afficheServicesAccueil();
         require "app/Views/Front/accueil.php";
+    }
+
+    function accueilPost($name, $mail, $subject, $content)
+    {
+        $accueil = new \Projet\Models\AccueilModel();
+
+        if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+            $mail = $accueil->postMailAccueil($name, $mail,$subject, $content);
+            $proposAccueil = $accueil->afficheProposAccueil();
+            $servicesAccueil = $accueil->afficheServicesAccueil();
+            require 'app/Views/Front/accueil.php';
+        }else{
+            header('Location: app/Views/Front/erreur.php');
+        }
     }
 
     function aPropos()
@@ -46,7 +63,7 @@ class FrontController
         $postMail = new \Projet\Models\ContactModel();
 
         if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-            $Mail = $postMail->postMail($name, $mail, $subject, $content);
+            $mail = $postMail->postMail($name, $mail, $subject, $content);
             require 'app/Views/Front/contact.php';
         }else{
             header('Location: app/Views/Front/erreur.php');
