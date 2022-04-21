@@ -7,6 +7,10 @@ body{
     padding: 0;
 }
 
+:root{
+  --button-color: #489CFF;
+}
+
 p{
   font-size: 0.9rem;
 }
@@ -176,3 +180,60 @@ header{
 {
   transform: none;
 }
+
+/* ----------------------------------------ADMIN-------------------------*/
+
+
+/* ------------------------Dashboard-------------- */
+
+#stats{
+  width: 100%;
+  margin: 15px 0;
+}
+
+.stat{
+  width: 100%;
+  margin: 15px 0;
+  border: solid grey 1px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat img{
+  height: 100px;
+  width: auto;
+}
+
+#articles{
+  width: 100%;
+}
+
+.article{
+  width: 100%;
+  margin: 15px 0;
+  border-radius: 22px;
+  /* display: flex; */
+  background-color: var(--main-color);
+  justify-content: space-between;
+  border: solid 1px rgba(128, 128, 128, 0.529);
+}
+
+.article img{
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 22px 22px 0 0;
+}
+
+.info_article{
+  margin: 0 10px;
+}
+
+.info_article h2{
+  font-size: 1.2rem;
+}
+
+
+
+
+

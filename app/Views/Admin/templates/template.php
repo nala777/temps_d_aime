@@ -28,7 +28,7 @@
                                 </ul>
                             </li>
                             <a href="indexAdmin.php?action=compte_admin"><li>Mon Compte</li></a>
-                            <a href="indexAdmin.php?action=compte_admin"><li>Deconnexion</li></a>
+                            <a href="indexAdmin.php?action=deconnexion"><li>Deconnexion</li></a>
                         </ul>
                     </div>
                 </nav>

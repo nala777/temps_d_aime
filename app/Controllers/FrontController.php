@@ -5,21 +5,23 @@ namespace Projet\Controllers;
 class FrontController
 {
     function accueil()
-    {
-        $accueil = new \Projet\Models\AccueilModel();
-        $proposAccueil = $accueil->afficheProposAccueil();
-        $servicesAccueil = $accueil->afficheServicesAccueil();
+    {   
+        $proposAccueil = new \Projet\Models\AProposModel();
+        $servicesAccueil = new \Projet\Models\ServicesModel();
+        $proposAccueil = $proposAccueil->afficheProposAccueil();
+        $servicesAccueil = $servicesAccueil->afficheServicesAccueil();
         require "app/Views/Front/accueil.php";
     }
 
     function accueilPost($name, $mail, $subject, $content)
     {
         $accueil = new \Projet\Models\AccueilModel();
-
+        $proposAccueil = new \Projet\Models\AProposModel();
+        $servicesAccueil = new \Projet\Models\ServicesModel();
         if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
             $mail = $accueil->postMailAccueil($name, $mail,$subject, $content);
-            $proposAccueil = $accueil->afficheProposAccueil();
-            $servicesAccueil = $accueil->afficheServicesAccueil();
+            $proposAccueil = $proposAccueil->afficheProposAccueil();
+            $servicesAccueil = $servicesAccueil->afficheServicesAccueil();
             require 'app/Views/Front/accueil.php';
         }else{
             header('Location: app/Views/Front/erreur.php');

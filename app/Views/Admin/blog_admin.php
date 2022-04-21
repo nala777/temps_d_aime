@@ -1,7 +1,27 @@
 <?php ob_start(); ?>
 <main>
-    
+
+<h2>Ajout d'un nouvel article</h2>
+<a href ="indexAdmin.php?action=ajout_blog">Ajouter</a>
+
+
+<section id="blog">
+        <?php foreach($articles as $article){?>
+            <article class="article">
+                <img src="<?= ($article['image']) ?>" alt="<?= ($article['descriptif_image'])?>">
+                <div class="info_article">
+                    <p>Publié le <?= ($article['date']) ?> - <?= ($article['categorie']) ?></p>
+                    <h2><?= ($article['titre']) ?></h2>
+                </div>
+                <div class="action_bouton">
+                    <a href="indexAdmin.php?action=modif_article&id=<?=($article['id'])?>">Modifier</a>
+                    <a href="indexAdmin.php?action=suppr_article&id=<?=($article['id'])?>">Supprimer</a>
+                </div>
+            </article>
+        
+        <?php } ?>
+    </section>
 </main>
 <?php $content = ob_get_clean(); ?>
-<?php $title = "A propos Blog" ?>
+<?php $title = "Modification Blog" ?>
 <?php require 'templates/template.php' ?>

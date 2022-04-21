@@ -1,6 +1,8 @@
 <?php ob_start(); ?>
-<h1>Erreur</h1>
-<?= $e ?>
+<main>
+    <h1>erreur</h1>
+    <?= $e ?>
+</main>
 <?php $content = ob_get_clean(); ?>
 <?php $title = "Erreur" ?>
 <?php require 'templates/template.php' ?>

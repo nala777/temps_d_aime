@@ -60,6 +60,8 @@ try{
     }
 } catch(Exception $e){
     require 'app/Views/Front/erreur.php';
+}catch(Error $e){
+    require 'app/Views/Front/erreur.php';
 }
 
 ?>

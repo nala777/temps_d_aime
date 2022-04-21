@@ -226,13 +226,11 @@ footer .tempsDaime{
   width: 100%;
   height: 250px;
   object-fit: cover;
-  /* position: absolute; */
 }
 
 .texte_propos{
   position: absolute;
   color: white;
-  text-align: center;
   top:0;
   left: 20%;
   width: 60%;
