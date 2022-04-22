@@ -3,13 +3,7 @@
 
 <h2>Bonjour <?= $_SESSION['prenom'] ?> <?= $_SESSION['nom'] ?> </h2>
     <div id="stats">
-        <div class="stat">
-            <div>
-                <h3><?= $countUsers['countUsers'] ?> Utilisateurs</h3>
-                <p><a href="#">Voir tous les utilisateurs</a></p>
-            </div>
-            <img src="app\public\Administration\img\users.png">
-        </div>
+        
         <div class="stat">
             <div>
                 <h3><?= $countContact['countContact'] ?> Nombre de contact</h3>

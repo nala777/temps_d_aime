@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
 <main>
-    <form action="indexAdmin.php?action=updateArticle" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" value="<?= $modif['image'] ?>" required>
+    <form action="indexAdmin.php?action=updateArticle&id=<?= $modif['idArt'] ;?>" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" value="<?=$modif['image']?>">
         <input placeholder="Descriptif" value ="<?=$modif['descriptif_image']?>" name="descriptif" type="text" required autofocus>
         <input placeholder="Titre Article" value ="<?=$modif['titre']?>" name="titre" type="text" required autofocus>
         <textarea placeholder="Texte Article" name="texte" type="text" required><?=$modif['texte']?></textarea>

@@ -33,9 +33,22 @@ class BlogModel extends TempsDaimeOrm
 
     public function modifArticle($idArticle){
         $bdd = $this->connect();
-        $req = $bdd->prepare("SELECT categorie,categories.id,image,descriptif_image,titre,texte FROM blog INNER JOIN categories ON categories.id = blog.id_categorie WHERE blog.id = ? ");
+        $req = $bdd->prepare("SELECT blog.id AS idArt,categorie,categories.id,image,descriptif_image,titre,texte FROM blog INNER JOIN categories ON categories.id = blog.id_categorie WHERE blog.id = ? ");
         $req->execute(array($idArticle));
         return $req->fetch();
+    }
+
+    public function updateArticle($idArticle,$descriptif,$titre,$texte,$categories){
+        $bdd = $this->connect();
+        // var_dump($categories);die;
+        $req = $bdd->prepare("UPDATE blog SET descriptif_image = ? , titre = ?, texte = ?, id_categorie = ? WHERE id = ?");
+        $req->execute(array($descriptif,$titre,$texte,$categories,$idArticle));
+    }
+
+    public function updateArticleImg($idArticle,$path,$descriptif,$titre,$texte,$categories){
+        $bdd = $this->connect();
+        $req = $bdd->prepare("UPDATE blog SET image = ? , descriptif_image = ? , titre = ?, texte = ?, id_categorie = ? WHERE id = ?");
+        $req->execute(array($path,$descriptif,$titre,$texte,$categories,$idArticle));
     }
 
     public function supprimerArticle($idArticle){

@@ -234,6 +234,30 @@ header{
 }
 
 
+/* ---------------------A propos----------------- */
+
+.a_propos{
+  margin-top: 5px;
+  position: relative;
+  text-align: center;
+}
+
+.img_propos{
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.texte_propos{
+  position: absolute;
+  color: white;
+  top:0;
+  left: 20%;
+  width: 60%;
+}
+
+
+
 
 
 

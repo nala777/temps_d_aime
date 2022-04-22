@@ -41,6 +41,43 @@ try {
             header('Location: index.php');
         }
 
+        //          A PROPOS ADMIN
+
+        elseif($_GET['action'] == 'a_propos_admin'){
+            $backController->a_propos_admin();
+        }
+
+        elseif($_GET['action'] == 'modif_propos'){
+
+            $idPropos = $_GET['id'];
+            $backController->a_propos_modif($idPropos);
+
+        }
+
+        elseif($_GET['action'] == 'updatePropos'){
+
+            $idArticle = $_GET['id'];
+            $descriptif = htmlspecialchars($_POST['descriptif']);
+            $titre = htmlspecialchars($_POST['titre']);
+            $texte = htmlspecialchars($_POST['texte']);
+            
+            if(!empty($file) && (!empty($descriptif) && (!empty($titre) && (!empty($texte))))){
+                $file = $_FILES['file'];
+                $path=$backController->upload($file);
+                $backController->updateProposImg($idArticle,$path,$descriptif,$titre,$texte); 
+
+            }elseif((!empty($descriptif) && (!empty($titre) && (!empty($texte))))) {
+                
+                $backController->updatePropos($idArticle,$descriptif,$titre,$texte);
+
+            
+            }else{
+                throw new Exception('Tous les champs ne sont pas remplis');
+            }
+        }
+
+        //          BLOG ADMIN
+
 
         elseif($_GET['action'] == 'blog_admin'){
             $backController->blog_admin();
@@ -57,7 +94,8 @@ try {
             $texte = htmlspecialchars($_POST['texte']);
             $categories = $_POST['categories'];
             if (!empty($file) && (!empty($descriptif) && (!empty($titre) && (!empty($texte) && (!empty($categories)))))) {
-                $backController->upload_article($file,$descriptif,$titre,$texte,$categories);
+                $path=$backController->upload($file);
+                $backController->upload_article($path,$descriptif,$titre,$texte,$categories);
             }else{
                 throw new Exception('Tous les champs ne sont pas remplis');
             }
@@ -68,18 +106,24 @@ try {
         }
 
         elseif($_GET['action'] == 'updateArticle'){
-            $idArticle = $GET_['id'];
-            $file = $_FILES['file'];
+            $idArticle = $_GET['id']; 
             $descriptif = htmlspecialchars($_POST['descriptif']);
             $titre = htmlspecialchars($_POST['titre']);
             $texte = htmlspecialchars($_POST['texte']);
             $categories = $_POST['categories'];
-            if (!empty($descriptif) && (!empty($titre) && (!empty($texte) && (!empty($categories))))) {
-                $backController->upload_article($file,$descriptif,$titre,$texte,$categories);
+            
+            if(!empty($file) && (!empty($descriptif) && (!empty($titre) && (!empty($texte) && (!empty($categories)))))){
+                $file = $_FILES['file'];
+                $path=$backController->upload($file);
+                $backController->updateArticleImg($idArticle,$path,$descriptif,$titre,$texte,$categories);
+                
+            }elseif (!empty($descriptif) && (!empty($titre) && (!empty($texte) && (!empty($categories))))) {
+    
+                $backController->updateArticle($idArticle,$descriptif,$titre,$texte,$categories);
+
             }else{
                 throw new Exception('Tous les champs ne sont pas remplis');
             }
-            $backController->updateArticle($idArticle);
         }
 
         elseif($_GET['action'] == 'suppr_article'){

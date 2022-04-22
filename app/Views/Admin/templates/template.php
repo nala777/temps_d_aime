@@ -21,7 +21,7 @@
                             <a href="/"><li>DashBoard</li></a>
                             <li>Contenu Page
                                 <ul>
-                                    <a href="indexAdmin.php?action=aPropos_admin"><li>A Propos</li></a>
+                                    <a href="indexAdmin.php?action=a_propos_admin"><li>A Propos</li></a>
                                     <a href="indexAdmin.php?action=services_admin"><li>Services</li></a>
                                     <a href="indexAdmin.php?action=portfolio_admin"><li>Portfolio</li></a>
                                     <a href="indexAdmin.php?action=blog_admin"><li>Blog</li></a>

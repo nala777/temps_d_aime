@@ -33,7 +33,6 @@ class AdminController
     { //recup du mot de pass
         $userManager = new \Projet\Models\AdminModel();
         $contact = new \Projet\Models\ContactModel();
-        $utilisateurs = new \Projet\Models\UtilisateursModel();
         $article = new \Projet\Models\BlogModel();
         
         
@@ -55,7 +54,6 @@ class AdminController
         
         $countContact = $contact->nbrContact();
         $countMail = $contact->nbrMail();
-        $countUsers = $utilisateurs->nbrCompteUtilisateurs();
         $derniersArticles = $article->lastArticles();
         if ($isPasswordCorrect) {
 
@@ -67,22 +65,10 @@ class AdminController
             //require('views/backend/erreur.php');
         }
     }
+    
+    // Traitement de fichiers images
 
-    public function derniersArticles(){
-        $articles = new \Projet\Models\BlogModel();
-        $allArticles = $articles->lastArticles();
-        require "app/Views/Front/a_propos.php";
-    }
-
-    public function blog_admin()
-    {
-        $article = new \Projet\Models\BlogModel();
-        $articles = $article->afficheArticle();
-        require "app/Views/Admin/blog_admin.php";
-    }
-    public function upload_article($file,$descriptif,$titre,$texte,$categories)
-    {
-        $article = new \Projet\Models\BlogModel();
+    public function upload($file){
         $tmpName = $file['tmp_name'];
         $name = $file['name'];
         $size = $file['size'];
@@ -91,7 +77,7 @@ class AdminController
         $tabExtension = explode('.', $name);
         $extension = strtolower(end($tabExtension));
         // Extensions Acceptées
-        $extensions = ['jpg', 'png', 'jpeg', 'gif'];
+        $extensions = ['jpg', 'png', 'jpeg', 'gif' , 'svg'];
         // Taille Image
         $maxSize = 4000000;
         
@@ -99,21 +85,75 @@ class AdminController
             
             $path = 'app/public/Front/img/'.$name;
             move_uploaded_file($tmpName, $path);
-            $article->upload($path,$descriptif,$categories,$titre,$texte);   
-
+            return $path;
         }else{
             echo "Une erreur est survenue";
         }
+    }
+
+    //                                         A Propos
+
+    public function a_propos_admin(){
+        $propos = new \Projet\Models\AProposModel();
+        $allPropos = $propos->affichePropos();
+        require "app/Views/Admin/a_propos_admin.php";
+    }
+
+    public function a_propos_modif($idPropos){
+        $propos = new \Projet\Models\AProposModel();
+        $modifP = $propos->propos($idPropos);
+        require "app/Views/Admin/modif_a_propos.php";
+    }
+
+    public function updatePropos($idArticle,$descriptif,$titre,$texte){
+        $propos = new \Projet\Models\AProposModel();
+        $UpdateP = $propos->updatePropos($idArticle,$descriptif,$titre,$texte);
+        $allPropos = $propos->affichePropos();
+        require "app/Views/Admin/a_propos_admin.php";
+    }
+
+    public function updateProposImg($idArticle,$path,$descriptif,$titre,$texte){
+        $propos = new \Projet\Models\AProposModel();
+        $UpdateP = $propos->updateProposImg($idArticle,$path,$descriptif,$titre,$texte);
+        $allPropos = $propos->affichePropos();
+        require "app/Views/Admin/a_propos_admin.php";
+    }
+
+
+
+    //                                          Partie BLOG
+
+    // public function derniersArticles(){
+    //     $articles = new \Projet\Models\BlogModel();
+    //     $allArticles = $articles->lastArticles();
+    //     require "app/Views/Front/a_propos.php";
+    // }
+
+    public function blog_admin()
+    {
+        $article = new \Projet\Models\BlogModel();
         $articles = $article->afficheArticle();
         require "app/Views/Admin/blog_admin.php";
     }
 
+    // Ajouter nouvel article
+    
     public function ajout_blog()
     {
         $article = new \Projet\Models\BlogModel();
         $categories = $article->afficheCategories();
         require "app/Views/Admin/ajout_blog.php";
     }
+
+    public function upload_article($path,$descriptif,$titre,$texte,$categories)
+    {
+        $article = new \Projet\Models\BlogModel();
+        $article->upload($path,$descriptif,$categories,$titre,$texte);   
+        $articles = $article->afficheArticle();
+        require "app/Views/Admin/blog_admin.php";
+    }
+
+    // Update d'article
 
     public function modificationArticle($idArticle){
         $article = new \Projet\Models\BlogModel();
@@ -122,9 +162,23 @@ class AdminController
         require "app/Views/Admin/modif_article.php";
     }
 
-    public function updateArticle($idArticle){
-        
+    public function updateArticle($idArticle,$descriptif,$titre,$texte,$categories){
+        $article = new \Projet\Models\BlogModel();
+        $article->updateArticle($idArticle,$descriptif,$titre,$texte,$categories);
+        $articles = $article->afficheArticle();
+        require "app/Views/Admin/blog_admin.php";
+
     }
+
+    public function updateArticleImg($idArticle,$path,$descriptif,$titre,$texte,$categories){
+        $article = new \Projet\Models\BlogModel();
+        $article->updateArticleImg($idArticle,$path,$descriptif,$titre,$texte,$categories);
+        $articles = $article->afficheArticle();
+        require "app/Views/Admin/blog_admin.php";
+
+    }
+
+    // Suppression Article
 
     public function supressionArticle($idArticle)
     {
