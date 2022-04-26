@@ -256,6 +256,55 @@ header{
   width: 60%;
 }
 
+/* ----------------------Services------------------- */
+
+#services{
+  width: 100%;
+}
+
+#services h1{
+  text-align: center;
+}
+
+.service{
+  border: 1px solid rgba(128, 128, 128, 0.599);
+  border-radius: 10px;
+  margin: 20px 0;
+  padding: 20px;
+  text-align: center;
+}
+
+.service .logo{
+  width: 140px;
+  height: 140px;
+  padding: 10px;
+  margin: auto;
+  border-radius: 100%;
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+} 
+
+.service .logo img{
+  height: 125px;
+  width: 125px;
+  display: block;
+  margin: auto;
+}
+
+.service .info_service h2{
+  margin: 25px 0 50px 0; 
+}
+
+/* ------------------------Portfolio--------------- */
+
+#portfolio{
+  width: 100%;
+}
+
+#portfolio img{
+  width: 100%;
+}
 
 
 

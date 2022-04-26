@@ -17,6 +17,12 @@ class ServicesModel extends TempsDaimeOrm
         $req = $bdd->query("SELECT logo,titre,texte,alt_logo FROM services ORDER BY id ASC LIMIT 3");
         return $req;
     }
+
+    public function updateServices()
+    {
+        $bdd = $this->connect();
+        $req = $bdd->prepare("UPDATE");
+    }
 }
 
 ?>

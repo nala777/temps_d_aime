@@ -10,7 +10,12 @@
                 <option value="<?= $categorie['id']?>"><?= $categorie['categorie'] ?></option>
             <?php }?>
         </select>
+        
         <button type="submit">Ajouter article</button>
+    </form>
+    <form action ="indexAdmin.php?action=ajout_categorie" method="POST" enctype="multipart/form-data">
+        <input placeholder="Catégorie" name="categorie" type="text" required autofocus>
+        <button type="submit">Ajouter une catégorie</button>
     </form>
     <img id="output"/>
 </main>

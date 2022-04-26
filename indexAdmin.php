@@ -76,6 +76,12 @@ try {
             }
         }
 
+        //          SERVICES ADMIN
+
+        elseif($_GET['action'] == 'services_admin'){
+            $backController->services_admin();
+        }
+
         //          BLOG ADMIN
 
 
@@ -85,6 +91,12 @@ try {
 
         elseif($_GET['action'] == 'ajout_blog'){
             $backController->ajout_blog();
+        }
+
+        elseif($_GET['action'] == 'ajout_categorie'){
+            $categorie = htmlspecialchars($_POST['categorie']);
+            $backController->ajout_categorie($categorie);
+            var_dump($categorie);die;
         }
 
         elseif($_GET['action'] == "upload_article"){
@@ -128,7 +140,28 @@ try {
 
         elseif($_GET['action'] == 'suppr_article'){
             $idArticle = $_GET['id'];
-            $backController->supressionArticle($idArticle);
+            $backController->suppressionArticle($idArticle);
+        }
+
+        elseif($_GET['action'] == 'portfolio_admin'){
+            $backController->afficheFolio();
+        }
+
+        elseif($_GET['action'] == 'ajout_folio'){
+            $file = $_FILES['file'];
+            $descriptif = htmlspecialchars($_POST['descriptif']);
+            $categories = $_POST['categories'];
+            if (!empty($file) && (!empty($descriptif) && (!empty($categories)))) {
+                $path = $backController->upload($file);
+                $backController->ajoutFolio($path,$descriptif,$categories);
+            }else{
+                throw new Exception('Tous les champs ne sont pas remplis');
+            }
+        }
+
+        elseif($_GET['action'] == 'suppr_folio'){
+            $idFolio = $_GET['id'];
+            $backController->suppressionFolio($idFolio);
         }
     
     }else{

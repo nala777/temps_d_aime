@@ -55,6 +55,7 @@ class AdminController
         $countContact = $contact->nbrContact();
         $countMail = $contact->nbrMail();
         $derniersArticles = $article->lastArticles();
+        
         if ($isPasswordCorrect) {
 
             require 'app/views/Admin/dashboard.php';
@@ -119,6 +120,14 @@ class AdminController
         require "app/Views/Admin/a_propos_admin.php";
     }
 
+    //                                          Partie Services
+
+    public function services_admin(){
+        $services = new \Projet\Models\ServicesModel();
+        $service = $services->afficheServices();
+        require "app/Views/Admin/services_admin.php";
+    }
+
 
 
     //                                          Partie BLOG
@@ -141,6 +150,14 @@ class AdminController
     public function ajout_blog()
     {
         $article = new \Projet\Models\BlogModel();
+        $categories = $article->afficheCategories();
+        require "app/Views/Admin/ajout_blog.php";
+    }
+
+    public function ajout_categorie($categorie)
+    {
+        $article = new \Projet\Models\BlogModel();
+        $categories = $article->ajoutCategorie($categorie);
         $categories = $article->afficheCategories();
         require "app/Views/Admin/ajout_blog.php";
     }
@@ -180,12 +197,52 @@ class AdminController
 
     // Suppression Article
 
-    public function supressionArticle($idArticle)
+    public function suppressionArticle($idArticle)
     {
         $article = new \Projet\Models\BlogModel();
         $articles = $article->supprimerArticle($idArticle);
         $articles = $article->afficheArticle();
         require "app/Views/Admin/blog_admin.php";
+    }
+
+    //                                     Partie PORTFOLIO
+
+    // Affichage Portfolio
+
+    public function afficheFolio()
+    {
+        $folio = new \Projet\Models\PortfolioModel();
+        $categories = $folio->afficheCategories();
+        $portfolio = $folio->afficheFolio();
+        require "app/Views/Admin/portfolio_admin.php";
+    }
+
+    public function afficheFolioAccueil()
+    {
+        
+        require "app/Views/Admin/portfolio_admin.php";
+    }
+
+    // Upload Portfolio
+    
+    public function ajoutFolio($path,$descriptif,$categories)
+    {
+        $folio = new \Projet\Models\PortfolioModel();
+        $portfolio = $folio->ajoutPortfolio($path,$descriptif,$categories);
+        $categories = $folio->afficheCategories();
+        $portfolio = $folio->afficheFolio();
+        require "app/Views/Admin/portfolio_admin.php";
+
+    }
+
+    public function suppressionFolio($idFolio)
+    {
+        $folio = new \Projet\Models\PortfolioModel();
+        $portfolio = $folio->supprFolio($idFolio);
+        $categories = $folio->afficheCategories();
+        $portfolio = $folio->afficheFolio();
+        
+        require "app/Views/Admin/portfolio_admin.php";   
     }
 
 

@@ -31,6 +31,12 @@ class BlogModel extends TempsDaimeOrm
         $req->execute(array($path,$descriptif,$categories,$titre,$texte));
     }
 
+    public function ajoutCategorie($categorie){
+        $bdd = $this->connect();
+        $req = $bdd->prepare("INSERT INTO categories(categorie) VALUE (?)");
+        $req->execute(array($categorie));
+    }
+
     public function modifArticle($idArticle){
         $bdd = $this->connect();
         $req = $bdd->prepare("SELECT blog.id AS idArt,categorie,categories.id,image,descriptif_image,titre,texte FROM blog INNER JOIN categories ON categories.id = blog.id_categorie WHERE blog.id = ? ");

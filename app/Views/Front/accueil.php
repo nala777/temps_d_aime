@@ -2,35 +2,44 @@
 
 <main>
     <div>
-        <?php foreach($proposAccueil as $propos){ ?>
+        
             <div class="a_propos">
-                <img class="img_propos" src="<?= ($propos['image']) ?>" alt="<?= ($propos['descriptif_image'])?>">
+                <img class="img_propos" src="<?= ($proposAccueil['image']) ?>" alt="<?= ($proposAccueil['descriptif_image'])?>">
+                <div id="filtre"></div>
                 <div class="texte_propos">
-                    <h2><?= ($propos['titre']) ?></h2>
-                    <p><?= ($propos['texte'])?></p>
-                </div>
+                    <h2><?= ($proposAccueil['titre']) ?></h2>
+                    <p><?= ($proposAccueil['texte'])?></p>
+                </div>   
             </div>
-        <?php } ?>
     </div>
 
     <section id="services">
-        <h1>Les services Proposés</h1>
-        <?php foreach($servicesAccueil as $service){?>
-            <article class="service">
-
-                <div class="logo">
-                    <!-- <div class="image_logo"> -->
-                        <img src="<?= ($service['logo']) ?>" alt="<?= ($service['alt_logo'])?>">
-                    <!-- </div> -->
-                </div>
-                <div class="info_service">
-                    <h2><?= ($service['titre']) ?> </h2>
-                    <p><?= ($service['texte']) ?></p>
-                </div>
+        <h1>Les services</h1>
+            <?php foreach($servicesAccueil as $service){?>
                 
-            </article>
-        <?php } ?>
+                <article class="service slides fade">
+                    <div class="logo">
+                        <div class="image_logo">
+                            <img src="<?= ($service['logo']) ?>" alt="<?= ($service['alt_logo'])?>">
+                        </div>
+                    </div>
+                    <div class="info_service">
+                        <h2><?= ($service['titre']) ?> </h2>
+                        <p><?= ($service['texte']) ?></p>
+                    </div>  
+                </article>
+            
+            <?php } ?>
+        </div>
+    </section>
 
+    <section id="folio_accueil">
+        <h2>Derniers Design</h2>
+        <?php foreach($portfolio as $folio){?>
+            <article class="container">
+                <img src="<?= $folio['image']?>" alt="<?= $folio['alt']?>">
+            </article>
+        <?php }?>
     </section>
     <div id="container_formulaire">
         <h2>N'hésitez plus à me contacter</h2>
@@ -46,7 +55,8 @@
 
 
 </main>
-
+<script src="app\public\Front\js\slider_accueil.js"></script>
 <?php $content = ob_get_clean(); ?>
 <?php $title = "Accueil" ?>
+
 <?php require 'templates/template.php' ?>

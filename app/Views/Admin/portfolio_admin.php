@@ -1,19 +1,26 @@
 <?php ob_start(); ?>
-<main>
-<form action="indexAdmin.php?action=updateArticle&id=<?= $modif['idArt'] ;?>" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" value="<?=$modif['image']?>">
-        <input placeholder="Descriptif" value ="<?=$modif['descriptif_image']?>" name="descriptif" type="text" required autofocus>
-        <input placeholder="Titre Article" value ="<?=$modif['titre']?>" name="titre" type="text" required autofocus>
-        <textarea placeholder="Texte Article" name="texte" type="text" required><?=$modif['texte']?></textarea>
-        <select name="categories" id="categories" required>
+<main class="container">
+    <h1>Modification Portfolio</h1>
+    <form action="indexAdmin.php?action=ajout_folio" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <input placeholder="Descriptif" name="descriptif" type="text" required autofocus>
+        <select name="categories">
             <?php foreach($categories as $categorie) {?>
-                <option value="<?= $categorie['id']?>"><?= $categorie['categorie'] ?></option>
+                <option value="<?= $categorie['id']?>"><?= $categorie['nom'] ?></option>
             <?php }?>
-                <option value="<?= $modif['id']?>" selected hidden ><?= $modif['categorie'] ?></option>
         </select>
-        <button type="submit">Ajouter Au Portfolio</button>
+        <button type="submit">Ajouter au Portfolio</button>
     </form>
-</main>
+    <div id="portfolio">
+        <?php foreach($portfolio as $folio){ ?>
+            <div class="">
+                <img src="<?= $folio['image']?>" alt <?= $folio['alt']?>>
+                <h4><?= $folio['nom']?></h4>
+                <a href="indexAdmin.php?action=suppr_folio&id=<?=($folio['id'])?>">Supprimer</a>
+            </div>
+        <?php }?>
+    </div>
+    </main>
 <?php $content = ob_get_clean(); ?>
 <?php $title = "Portfolio Admin" ?>
 <?php require 'templates/template.php' ?>

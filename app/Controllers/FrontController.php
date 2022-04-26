@@ -6,21 +6,24 @@ class FrontController
 {
     function accueil()
     {   
-        $proposAccueil = new \Projet\Models\AProposModel();
+        $propos = new \Projet\Models\AProposModel();
         $servicesAccueil = new \Projet\Models\ServicesModel();
-        $proposAccueil = $proposAccueil->afficheProposAccueil();
+        $folio = new \Projet\Models\PortfolioModel();
+        
+        $proposAccueil = $propos->afficheProposAccueil();
         $servicesAccueil = $servicesAccueil->afficheServicesAccueil();
+        $portfolio = $folio->afficheFolioAccueil();
         require "app/Views/Front/accueil.php";
     }
 
     function accueilPost($name, $mail, $subject, $content)
     {
         $accueil = new \Projet\Models\AccueilModel();
-        $proposAccueil = new \Projet\Models\AProposModel();
+        $propos = new \Projet\Models\AProposModel();
         $servicesAccueil = new \Projet\Models\ServicesModel();
         if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
             $mail = $accueil->postMailAccueil($name, $mail,$subject, $content);
-            $proposAccueil = $proposAccueil->afficheProposAccueil();
+            $proposAccueil = $propos->afficheProposAccueil();
             $servicesAccueil = $servicesAccueil->afficheServicesAccueil();
             require 'app/Views/Front/accueil.php';
         }else{
