@@ -19,7 +19,8 @@ class PortfolioModel extends TempsDaimeOrm
 
     public function afficheFolioAccueil(){
         $bdd = $this->connect();
-        $req = $bdd->query("SELECT id,image,alt FROM portfolio ORDER BY id DESC LIMIT 3");
+        $req = $bdd->prepare("SELECT id,image,alt FROM portfolio ORDER BY id DESC LIMIT 3");
+        $req->execute(array());
         return $req;
     }
     

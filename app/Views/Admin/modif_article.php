@@ -11,7 +11,7 @@
             <?php }?>
                 <option value="<?= $modif['id']?>" selected hidden ><?= $modif['categorie'] ?></option>
         </select>
-        <button type="submit">Ajouter article</button>
+        <button type="submit">Modifier article</button>
     </form>
 </main>
 <?php $content = ob_get_clean(); ?>

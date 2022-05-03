@@ -1,294 +1,298 @@
-*{
+* {
   font-family: 'Roboto', sans-serif;
 }
 
-body{
-    margin: 0;
-    padding: 0;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-p{
-  font-size: 0.9rem;
-  font-weight:300;
-  }
-
-.container{
-    width: 95%;
-    margin:auto;
+p {
+  font-size: 1.2rem;
+  font-weight: 300;
 }
 
+.container {
+  width: 90%;
+  margin: auto;
+}
 
-:root{
+:root {
   --main-color: #F8E2FF;
   --button-color: #489CFF;
 }
 
-#entete{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+#entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
-
-
-
-
-a
-{
+a {
   text-decoration: none;
   color: #232323;
-  
+
   transition: color 0.3s ease;
 }
 
-a:hover
-{
+a:hover {
   color: tomato;
 }
 
 /* ----------------------------Header-------------------------- */
 /* -----------Menu-------------- */
-#menuToggle
-{
+#menuToggle {
   display: block;
   position: relative;
   width: 5%;
   top: 2px;
   left: 0;
   z-index: 1;
-  
+
   -webkit-user-select: none;
   user-select: none;
 }
 
-#menuToggle input
-{
+#menuToggle input {
   display: block;
   width: 40px;
   height: 32px;
   position: absolute;
   top: -7px;
   left: -8px;
-  
+
   cursor: pointer;
-  
-  opacity: 0; /* hide this */
-  z-index: 2; /* and place it over the hamburger */
-  
+
+  opacity: 0;
+  /* hide this */
+  z-index: 2;
+  /* and place it over the hamburger */
+
   -webkit-touch-callout: none;
 }
 
 /*
  * Just a quick hamburger
  */
-#menuToggle span
-{
+#menuToggle span {
   display: block;
   width: 33px;
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-  
-  background: #cdcdcd;
+
+  background: black;
   border-radius: 3px;
-  
+
   z-index: 1;
-  
+
   transform-origin: 4px 0px;
-  
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    opacity 0.55s ease;
 }
 
-#menuToggle span:first-child
-{
+#menuToggle span:first-child {
   transform-origin: 0% 0%;
 }
 
-#menuToggle span:nth-last-child(2)
-{
+#menuToggle span:nth-last-child(2) {
   transform-origin: 0% 100%;
 }
 
-/* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
-#menuToggle input:checked ~ span
-{
+#menuToggle input:checked~span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
 }
 
-/*
- * But let's hide the middle one.
- */
-#menuToggle input:checked ~ span:nth-last-child(3)
-{
+
+#menuToggle input:checked~span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-/*
- * Ohyeah and the last one should go the other direction
- */
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
+#menuToggle input:checked~span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
-/*
- * Make this absolute positioned
- * at the top left of the screen
- */
-#menu
-{
+#menu {
   position: absolute;
-  width: 200px;
+  width: 250px;
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
-  
-  background: #ededed;
+  border-radius: 5%;
+  background: rgba(255, 255, 255, 0.9);
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
-  
+
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
-  
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 }
 
-#menu li
-{
+#menu li {
   list-style-type: none;
   padding: 10px 0;
   font-size: 22px;
 }
 
-/*
- * And let's slide it in from the left
- */
-#menuToggle input:checked ~ ul
-{
+#menuToggle input:checked~ul {
   transform: none;
 }
 
-
-#menu li
-{
+#menu li {
   padding: 10px 0;
   font-size: 22px;
 }
 
-/*
- * And let's slide it in from the left
- */
-#menuToggle input:checked ~ ul
-{
+#menuToggle input:checked~ul {
   transform: none;
 }
+
 /* -----------Logo-------------- */
-.tempsDaime{
+.tempsDaime {
   display: flex;
   align-items: center;
 }
 
-.tempsDaime img{
+.tempsDaime img {
   height: 50px;
   width: auto;
 }
 
-.tempsDaime h2{
+.tempsDaime h2 {
   font-size: 1.7rem;
 }
 
 /* ----------------------------Footer------------------------ */
 
-footer{
+footer {
   text-align: center;
 }
 
-footer .tempsDaime{
+footer .tempsDaime {
   justify-content: center;
 }
 
-/* ----------------------Page A Propos----------------------- */
+/* ----------------------A Propos----------------------- */
 
-.a_propos{
+
+/* ----------Accueil--------*/
+#a_propos_accueil {
   position: relative;
   text-align: center;
 }
 
-.a_propos h2{
+#a_propos_accueil h1 {
   font-size: 2em;
   font-weight: 400;
+  margin: 10px 0;
 }
 
-.img_propos{
+#img_propos_accueil {
   width: 100%;
   height: 250px;
   object-fit: cover;
-  border-radius: 0 0 15px 15px;
+  border-radius: 0 0 40px 40px;
 }
 
-#filtre{
+#filtre {
   width: 100%;
   height: 250px;
   position: absolute;
-  border-radius: 0 0 15px 15px;
+  border-radius: 0 0 40px 40px;
   background: rgba(0, 0, 0, 0.35);
   top: 0;
   left: 0;
 }
 
-.texte_propos{
+#texte_propos_accueil {
   position: absolute;
   color: white;
-  top:0;
+  top: 0;
   left: 20%;
   width: 60%;
 }
 
-.tiret{
-  margin: auto;
-  height: 150px;
-  width: 1px;
-  border-left: dashed grey;
+#texte_propos_accueil p {
+  line-height: 20px;
 }
 
+/* ---------------Page A Propos---------------- */
 
+.a_propos {
+  position: relative;
+  text-align: center;
+}
 
-#folio_accueil img{
+.a_propos h1 {
+  font-size: 2em;
+  font-weight: 400;
+  margin: 10px 0;
+}
+
+.img_propos {
   width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 0 0 40px 40px;
 }
 
+#filtre {
+  width: 100%;
+  height: 250px;
+  position: absolute;
+  border-radius: 0 0 40px 40px;
+  background: rgba(0, 0, 0, 0.35);
+  top: 0;
+  left: 0;
+}
+
+.texte_propos {
+  position: absolute;
+  color: white;
+  top: 0;
+  left: 20%;
+  width: 60%;
+}
+
+.texte_propos p {
+  line-height: 20px;
+}
 
 /* --------------------------------Services---------------------- */
 
-#services{
+#services {
   width: 100%;
   text-align: center;
+  background-color: var(--main-color);
+  margin: 2em 0;
+  padding: 20px 0;
+  border-radius: 12px;
 }
 
-#services h1{
+#services h2 {
   text-align: center;
   font-size: 2.0rem;
   font-weight: 400;
+  margin: 0;
 }
 
-.service{
+.service {
   border: 1px solid rgba(128, 128, 128, 0.599);
   border-radius: 10px;
-  margin: 20px 0;
-  padding: 20px;
+  margin: 25px 5%;
+  padding: 20px 0;
+  background-color: white;
   text-align: center;
 }
 
-.service .logo{
+.service .logo {
   width: 140px;
   height: 140px;
   padding: 10px;
@@ -296,37 +300,53 @@ footer .tempsDaime{
   border-radius: 100%;
   background-color: var(--main-color);
   display: flex;
-  align-items: center;
-} 
+  justify-content: center;
+}
 
-.service .logo img{
+.service .logo img {
   height: 125px;
   width: 125px;
   display: block;
   margin: auto;
 }
 
-.service .info_service h2{
-  margin: 25px 0 50px 0; 
+.service .info_service{
+  margin: 5%;
 }
 
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+.service .info_service h3{
+  margin: 25px 0 50px 0;
+  font-size: 2em;
+  font-weight: 300;
 }
 
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+/* -------------------------------Folio---------------------------- */
+
+/*----Folio Accueil-----*/
+
+#folio_accueil {
+  text-align: center;
+  width: 100%;
+  margin: 2em 0;
+}
+
+#folio_accueil h2 {
+  padding-top: 15px;
 }
 
 
+#folio_accueil img {
+  width: 100%;
+  border: 1px rgba(0, 0, 0, 0.15) solid;
+  margin: 10px 0;
+  border-radius: 40px;
+}
 
 /* --------------------------------Blog-------------------------- */
 
 
 
-.article{
+.article {
   width: 100%;
   margin: 15px 0;
   border-radius: 22px;
@@ -336,54 +356,69 @@ footer .tempsDaime{
   border: solid 1px rgba(128, 128, 128, 0.529);
 }
 
-.article img{
+.article img {
   width: 100%;
   height: 150px;
   object-fit: cover;
   border-radius: 22px 22px 0 0;
 }
 
-.info_article{
+.info_article {
   margin: 0 10px;
 }
 
-.info_article h2{
+.info_article h2 {
   font-size: 1.2rem;
 }
 
 
 /* -------------------Contact---------------------- */
 
-#container_formulaire{
-  width: 100%;
+#container_formulaire_accueil {
   background-color: var(--main-color);
+  width: 100%;
+  padding : 25px 0;
 }
 
-#container_formulaire h2{
-  margin: 10px;
+#container_formulaire_accueil h2 {
+  margin-top: 10px 0;
 }
 
-#container_formulaire form{
+#container_formulaire_accueil form {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
-#container_formulaire  form input{
-  width: 250px;
-  margin: 10px;
+#container_formulaire_accueil form input {
+
+  margin: 10px 0;
+  height: 20px;
 }
 
-#container_formulaire form textarea{
-  width: 250px;
-  margin: 10px;
+#container_formulaire_accueil form textarea {
+  margin: 10px 0;
+  height: 100px;
 }
 
-#container_formulaire form button{
+#container_formulaire_accueil ::placeholder{
+  margin-left: 5px;
+}
+
+
+
+#container_formulaire_accueil form button {
   width: 100px;
-  margin: 10px;
+  height: 30px;
+  font-size: 1.1rem;
+  margin: 10px 0;
   color: white;
   background-color: var(--button-color);
   border-radius: 5px;
   border: none;
 }
 
+.fa-brands{
+  color: black;
+  background-color: black;
+}

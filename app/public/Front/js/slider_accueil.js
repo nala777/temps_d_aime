@@ -3,17 +3,16 @@ showSlides();
 
 function showSlides() {
     let i;
-    let slides = document.getElementsByClassName("slides");
+    let slides = document.getElementsByClassName("service");
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
-    if(i=1){
-        slides.classList.add('inverse')
-    }
     slideIndex++;
+    
     if (slideIndex > slides.length) {
         slideIndex = 1
     }
+    
     slides[slideIndex-1].style.display = "block";
-    setTimeout(showSlides, 5000);
+    setTimeout(showSlides, 7000);
 }
