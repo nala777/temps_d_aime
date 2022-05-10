@@ -35,7 +35,7 @@ class FrontController
     {
         $propos = new \Projet\Models\AProposModel();
         $allPropos = $propos->affichePropos();
-        require "app/Views/Admin/a_propos_admin.php";
+        require "app/Views/Front/a_propos.php";
     }
 
 

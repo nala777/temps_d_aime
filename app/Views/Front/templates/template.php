@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/f819e60e09.js" crossorigin="anonymous"></script>
-    <link href="app\public\Front\css\style.css" rel="stylesheet" type="text/css">
-    
+    <link href="app/public/Front/css/style.css" rel="stylesheet" type="text/css">
     <title><?=$title?></title>
 </head>
 <body >
@@ -39,21 +37,14 @@
     <?= $content ?>
 
     <footer class="container">
+        <div id="logo_reseaux">
+            <img src="app\public\Front\img\SVG\facebook.svg" class="reseaux">
+            <img src="app\public\Front\img\SVG\instagram.svg" class="reseaux">
+            <img src="app\public\Front\img\SVG\twitter.svg" class="reseaux">
+        </div>
         <div class="tempsDaime">
             <img src="app\public\Front\img\logo-min.png" alt="logo temps d'aime">
             <h2>Temps D'aime</h2>
-        </div>
-        <address>
-            <p>54 rue de poupi<p>
-            </p>29540 Spézet, France</p>
-        </address>
-        <div id="reseaux">
-            <p>Vous pouvez me retrouver sur les réseaux sociaux</p>
-            <div id="logo_reseaux">
-                <i class="fa-brands fa-facebook-square"></i>
-                <i class="fa-brands fa-twitter-square"></i>
-                <i class="fa-brands fa-instagram-square"></i>
-            </div>
         </div>
     </footer>
 </body>

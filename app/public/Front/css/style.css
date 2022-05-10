@@ -10,11 +10,23 @@ body {
 p {
   font-size: 1.2rem;
   font-weight: 300;
+  line-height: 20px;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 300;
 }
 
 .container {
   width: 90%;
   margin: auto;
+  max-width: 1200px;
 }
 
 :root {
@@ -81,14 +93,10 @@ a:hover {
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-
   background: black;
   border-radius: 3px;
-
   z-index: 1;
-
   transform-origin: 4px 0px;
-
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
     background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
     opacity 0.55s ease;
@@ -127,11 +135,8 @@ a:hover {
   border-radius: 5%;
   background: rgba(255, 255, 255, 0.9);
   -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
-
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
-
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 }
 
@@ -165,19 +170,30 @@ a:hover {
   width: auto;
 }
 
-.tempsDaime h2 {
-  font-size: 1.7rem;
-}
-
 /* ----------------------------Footer------------------------ */
 
 footer {
   text-align: center;
+  padding-bottom: 30px;
+}
+
+footer .reseaux {
+  width: 10%;
+}
+
+footer #logo_reseaux {
+  display: flex;
+  justify-content: space-around;
+  margin-top: -22px;
 }
 
 footer .tempsDaime {
   justify-content: center;
 }
+
+
+
+
 
 /* ----------------------A Propos----------------------- */
 
@@ -189,8 +205,6 @@ footer .tempsDaime {
 }
 
 #a_propos_accueil h1 {
-  font-size: 2em;
-  font-weight: 400;
   margin: 10px 0;
 }
 
@@ -215,12 +229,8 @@ footer .tempsDaime {
   position: absolute;
   color: white;
   top: 0;
-  left: 20%;
-  width: 60%;
-}
-
-#texte_propos_accueil p {
-  line-height: 20px;
+  left: 15%;
+  width: 70%;
 }
 
 /* ---------------Page A Propos---------------- */
@@ -261,10 +271,6 @@ footer .tempsDaime {
   width: 60%;
 }
 
-.texte_propos p {
-  line-height: 20px;
-}
-
 /* --------------------------------Services---------------------- */
 
 #services {
@@ -278,8 +284,6 @@ footer .tempsDaime {
 
 #services h2 {
   text-align: center;
-  font-size: 2.0rem;
-  font-weight: 400;
   margin: 0;
 }
 
@@ -310,11 +314,11 @@ footer .tempsDaime {
   margin: auto;
 }
 
-.service .info_service{
+.service .info_service {
   margin: 5%;
 }
 
-.service .info_service h3{
+.service .info_service h3 {
   margin: 25px 0 50px 0;
   font-size: 2em;
   font-weight: 300;
@@ -326,12 +330,15 @@ footer .tempsDaime {
 
 #folio_accueil {
   text-align: center;
-  width: 100%;
-  margin: 2em 0;
+  margin: 2em auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 #folio_accueil h2 {
   padding-top: 15px;
+  width: 100%;
 }
 
 
@@ -377,11 +384,20 @@ footer .tempsDaime {
 #container_formulaire_accueil {
   background-color: var(--main-color);
   width: 100%;
-  padding : 25px 0;
+  padding: 25px 0 50px;
+  border-radius: 12px;
+}
+
+#texte_formulaire{
+  text-align: center;
+}
+
+#container_formulaire_accueil p {
+  width: 100%;
 }
 
 #container_formulaire_accueil h2 {
-  margin-top: 10px 0;
+  margin-top: 10px;
 }
 
 #container_formulaire_accueil form {
@@ -401,24 +417,154 @@ footer .tempsDaime {
   height: 100px;
 }
 
-#container_formulaire_accueil ::placeholder{
-  margin-left: 5px;
-}
-
-
-
 #container_formulaire_accueil form button {
   width: 100px;
   height: 30px;
   font-size: 1.1rem;
-  margin: 10px 0;
+  margin: 10px auto;
   color: white;
   background-color: var(--button-color);
   border-radius: 5px;
   border: none;
 }
 
-.fa-brands{
-  color: black;
-  background-color: black;
+/* ----------------------Tablette-------------------- */
+
+@media screen and (min-width: 600px) {
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+    line-height: 25px;
+  }
+
+  #a_propos_accueil h1 {
+    font-size: 2em;
+    font-weight: 400;
+    margin: 30px 0;
+  }
+
+  #folio_accueil article {
+    width: 45%;
+  }
+
+  #container_formulaire_accueil form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  #container_formulaire_accueil form input {
+    width: 45%;
+  }
+
+  #container_formulaire_accueil form .message_tablette {
+    width: 100%;
+  }
+
+  footer #logo_reseaux {
+    margin-top: -40px;
+  }
+
+}
+
+@media screen and (min-width : 1024px) {
+
+  body {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  #a_propos_accueil {
+    background-color: var(--main-color);
+    border-radius: 0 0 40px 40px;
+    height: 400px;
+  }
+
+  #img_propos_accueil {
+    width: 60%;
+    border-radius: 0 0 40px 0;
+    position: relative;
+    left: 20%;
+    height: 400px;
+  }
+
+  #filtre {
+    display: none;
+  }
+
+  #texte_propos_accueil {
+    width: 25%;
+    left: 5%;
+    text-align: start;
+    color: black;
+  }
+
+  #services {
+      background-color: white;
+  }
+
+  #services h2{
+    text-align: start;
+  }
+
+  #background_folio{
+    background-color: var(--main-color);
+    width: 100%;
+  }
+
+  #folio_accueil{
+    text-align: start;
+    padding-bottom: 2em;
+  }
+
+  #folio_accueil article {
+    width: 30%;
+  }
+
+  #container_formulaire_accueil{
+    background-color: white;
+  }
+
+  #formulaire_desktop{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #texte_formulaire{
+    text-align: start;
+    width: 35%;
+  }
+
+  #container_formulaire_accueil h2{
+    margin-top: 0;
+  }
+
+  #container_formulaire_accueil form{
+    width: 50%;
+  }
+
+  #container_formulaire_accueil form input{
+    width: 100%;
+  }
+
+  footer #logo_reseaux{
+
+    margin-top: 20px;
+    height: 60px;
+    width: auto;
+  }
+
+
+
+  
+
+  
+
+
+
+
 }

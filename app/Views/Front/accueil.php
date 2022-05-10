@@ -13,7 +13,7 @@
     </div>
 
     <section id="services">
-        <h2>Les services</h2>
+        <h2 class="container">Les services</h2>
             <?php foreach($servicesAccueil as $service){?>
                 
                 <article class="service slides">
@@ -29,28 +29,30 @@
                 </article>
             
             <?php } ?>
-        </div>
     </section>
-
-    <section id="folio_accueil">
-        <h2>Derniers Design</h2>
-        <?php foreach($portfolio as $folio){?>
-            <article class="container">
-                <img src="<?= $folio['image']?>" alt="<?= $folio['alt']?>">
-            </article>
-        <?php }?>
-    </section>
+    <div id="background_folio">
+        <section id="folio_accueil" class="container">
+            <h2>Derniers Design</h2>
+            <?php foreach($portfolio as $folio){?>
+                <article >
+                    <img src="<?= $folio['image']?>" alt="<?= $folio['alt']?>">
+                </article>
+            <?php }?>
+        </section>
+    </div>
 
     <div id="container_formulaire_accueil">
-        <div class="container">
+        <div class="container" id="formulaire_desktop">
+        <div id="texte_formulaire">
             <h2>Travaillons ensemble</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor interdum ligula, eu hendrerit orci semper sed. Nam dignissim tortor sit amet neque blandit porttitor. Sed vitae viverra tellus. Nunc. </p>
+        </div>
             <form id="contact" action="index.php?action=accueilPost" method="post">
                 <input aria-label="nom" placeholder="Votre nom" name="name" type="text" required autofocus>
                 <input aria-label="email" placeholder="Votre Email" name="mail" type="mail" required>
-                <input aria-label="Sujet" placeholder="Votre Sujet" name="subject" type="text" required>
-                <textarea placeholder="Votre message" name="content" required></textarea>
-                <button name="submit" type="submit" id="contact-submit">Envoyer</button>
+                <input class="message_tablette" aria-label="Sujet" placeholder="Votre Sujet" name="subject" type="text" required>
+                <textarea class="message_tablette" placeholder="Votre message" name="content" required></textarea>
+                <button  name="submit" type="submit" id="contact-submit">Envoyer</button>
             </form>
         </div>
     </div>
