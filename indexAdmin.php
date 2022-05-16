@@ -116,7 +116,7 @@ try {
             $idArticle = $_GET['id'];
             $backController->modificationArticle($idArticle);
         }
-
+        
         elseif($_GET['action'] == 'updateArticle'){
             $idArticle = $_GET['id']; 
             $descriptif = htmlspecialchars($_POST['descriptif']);

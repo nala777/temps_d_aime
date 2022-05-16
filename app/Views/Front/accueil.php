@@ -4,7 +4,7 @@
     <div> 
         <div id="a_propos_accueil">
             <img id="img_propos_accueil" src="<?= ($proposAccueil['image']) ?>" alt="<?= ($proposAccueil['descriptif_image'])?>">
-            <div id="filtre"></div>
+            <div class="filtre"></div>
             <div id="texte_propos_accueil">
                 <h1><?= ($proposAccueil['titre']) ?></h1>
                 <p><?= ($proposAccueil['texte'])?></p>

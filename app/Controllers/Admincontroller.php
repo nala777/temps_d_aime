@@ -40,30 +40,30 @@ class AdminController
         $connexAdm = $userManager->recupMdp($mail, $mdp);
 
         $resultat = $connexAdm->fetch();
+        if(!empty($result)){
 
-        $isPasswordCorrect = password_verify($mdp, $resultat['mdp']);
+            $isPasswordCorrect = password_verify($mdp, $resultat['mdp']);
+            if ($isPasswordCorrect) {
+                $_SESSION['mail'] = $resultat['mail']; // transformation des variables recupérées en session
+                $_SESSION['mdp'] = $resultat['mdp'];
+                $_SESSION['id'] = $resultat['id'];
+                $_SESSION['prenom'] = $resultat['prenom'];
+                $_SESSION['nom'] = $resultat['nom'];
 
-        $_SESSION['mail'] = $resultat['mail']; // transformation des variables recupérées en session
-        $_SESSION['mdp'] = $resultat['mdp'];
-        $_SESSION['id'] = $resultat['id'];
-        $_SESSION['prenom'] = $resultat['prenom'];
-        $_SESSION['nom'] = $resultat['nom'];
 
-
-        
-        
-        $countContact = $contact->nbrContact();
-        $countMail = $contact->nbrMail();
-        $derniersArticles = $article->lastArticles();
-        
-        if ($isPasswordCorrect) {
-
-            require 'app/views/Admin/dashboard.php';
-        } 
-        
-        else {
+            
+            
+                $countContact = $contact->nbrContact();
+                $countMail = $contact->nbrMail();
+                $derniersArticles = $article->lastArticles();
+            
+                require 'app/views/Admin/dashboard.php';
+            }else{
             echo 'Vos identifiants sont incorrect';
             //require('views/backend/erreur.php');
+            }
+        }else{
+            echo 'mail non existant';
         }
     }
     

@@ -5,10 +5,11 @@
 body {
   margin: 0;
   padding: 0;
+  font-size: 1.2em;
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1.2em;
   font-weight: 300;
   line-height: 20px;
 }
@@ -49,7 +50,7 @@ a {
 }
 
 a:hover {
-  color: tomato;
+  color: var(--button-color);
 }
 
 /* ----------------------------Header-------------------------- */
@@ -159,6 +160,10 @@ a:hover {
   transform: none;
 }
 
+#menu_desktop {
+  display: none;
+}
+
 /* -----------Logo-------------- */
 .tempsDaime {
   display: flex;
@@ -184,16 +189,14 @@ footer .reseaux {
 footer #logo_reseaux {
   display: flex;
   justify-content: space-around;
-  margin-top: -22px;
+  height: 60px;
+  width: auto;
+  margin-top: -28px;
 }
 
 footer .tempsDaime {
   justify-content: center;
 }
-
-
-
-
 
 /* ----------------------A Propos----------------------- */
 
@@ -210,14 +213,14 @@ footer .tempsDaime {
 
 #img_propos_accueil {
   width: 100%;
-  height: 250px;
+  height: 300px;
   object-fit: cover;
   border-radius: 0 0 40px 40px;
 }
 
 #filtre {
   width: 100%;
-  height: 250px;
+  height: 300px;
   position: absolute;
   border-radius: 0 0 40px 40px;
   background: rgba(0, 0, 0, 0.35);
@@ -235,40 +238,76 @@ footer .tempsDaime {
 
 /* ---------------Page A Propos---------------- */
 
+#bloc_propos {
+  margin: 30px auto 45px;
+}
+
 .a_propos {
   position: relative;
   text-align: center;
 }
 
-.a_propos h1 {
+#titre_propos {
   font-size: 2em;
-  font-weight: 400;
-  margin: 10px 0;
+  font-weight: 300;
+  margin: 10px;
+  text-align: center;
 }
 
 .img_propos {
   width: 100%;
-  height: 250px;
+  height: 300px;
   object-fit: cover;
-  border-radius: 0 0 40px 40px;
+  border-radius: 40px 40px 40px 40px;
 }
 
-#filtre {
+.filtre {
   width: 100%;
-  height: 250px;
+  height: 300px;
   position: absolute;
-  border-radius: 0 0 40px 40px;
+  border-radius: 40px 40px 40px;
   background: rgba(0, 0, 0, 0.35);
   top: 0;
   left: 0;
+}
+
+.texte_propos h2 {
+  margin-top: 10px;
 }
 
 .texte_propos {
   position: absolute;
   color: white;
   top: 0;
-  left: 20%;
-  width: 60%;
+  left: 15%;
+  width: 70%;
+}
+
+.texte_propos p {
+  margin-top: 5px;
+}
+
+.a_propos:nth-of-type(1) img,.a_propos:nth-of-type(1) #filtre{
+  border-radius: 40px 40px 0 0;
+}
+
+.a_propos:nth-of-type(3) img,.a_propos:nth-of-type(3) #filtre{
+  border-radius: 0;
+}
+
+.a_propos:nth-of-type(5) img,.a_propos:nth-of-type(5) #filtre{
+  border-radius: 0 0 40px 40px;
+}
+
+.tiret:nth-of-type(2),.tiret:nth-of-type(4){
+  width: 100;
+  background-color: var(--main-color);
+  text-align: center;
+  margin-top: -5px;
+}
+
+.tiret:nth-child(6){
+  display: none;
 }
 
 /* --------------------------------Services---------------------- */
@@ -388,7 +427,7 @@ footer .tempsDaime {
   border-radius: 12px;
 }
 
-#texte_formulaire{
+#texte_formulaire {
   text-align: center;
 }
 
@@ -428,6 +467,11 @@ footer .tempsDaime {
   border: none;
 }
 
+#container_formulaire_accueil form input,
+textarea {
+  font-size: 1.2rem
+}
+
 /* ----------------------Tablette-------------------- */
 
 @media screen and (min-width: 600px) {
@@ -439,6 +483,10 @@ footer .tempsDaime {
   p {
     font-size: 1.4rem;
     line-height: 25px;
+  }
+
+  footer #logo_reseaux {
+    margin-top: -29px;
   }
 
   #a_propos_accueil h1 {
@@ -458,6 +506,7 @@ footer .tempsDaime {
   }
 
   #container_formulaire_accueil form input {
+    font-size: 1.2rem;
     width: 45%;
   }
 
@@ -465,9 +514,7 @@ footer .tempsDaime {
     width: 100%;
   }
 
-  footer #logo_reseaux {
-    margin-top: -40px;
-  }
+
 
 }
 
@@ -478,6 +525,22 @@ footer .tempsDaime {
     margin: auto;
   }
 
+  #menuToggle {
+    display: none;
+  }
+
+  #menu_desktop {
+    display: flex;
+    list-style: none;
+    padding-left: 0px;
+  }
+
+  #menu_desktop li {
+    margin-right: 20px;
+    ;
+  }
+  /*------------------------- A propos -------------------*/
+  /* Accueil */
   #a_propos_accueil {
     background-color: var(--main-color);
     border-radius: 0 0 40px 40px;
@@ -492,7 +555,7 @@ footer .tempsDaime {
     height: 400px;
   }
 
-  #filtre {
+  .filtre {
     display: none;
   }
 
@@ -503,20 +566,74 @@ footer .tempsDaime {
     color: black;
   }
 
-  #services {
-      background-color: white;
+  /* Page A Propos */
+
+  .a_propos {
+    background-color: var(--main-color);
+    height: 500px;
   }
 
-  #services h2{
+  .img_propos {
+      width: 50%;
+      position: relative;
+      left: 25%;
+      height: 500px;
+  }
+
+  .a_propos:nth-of-type(1){
+    border-radius: 40px 40px 0 0;
+  }
+
+  .a_propos:nth-of-type(1) img{
+    border-radius: 0px 40px 0 0;
+  }
+
+  .a_propos:nth-of-type(3) img{
+    left: -25%;
+  }
+
+  .a_propos:nth-of-type(3) .texte_propos {
+    width: 25%;
+    left: 70%;
+    text-align: end;
+    color: black;
+  }
+
+  .a_propos:nth-of-type(5) img{
+    border-radius: 0px 0px 40px 0;
+  }
+
+  .a_propos:nth-of-type(5){
+    border-radius: 0 0 40px 40px;
+  }
+
+  .texte_propos {
+    width: 25%;
+    left: 5%;
     text-align: start;
+    color: black;
+    padding-top: 30px;
   }
 
-  #background_folio{
+  .tiret:nth-of-type(2),.tiret:nth-of-type(4){
+    background-color: white;
+  }
+
+  #services {
+    background-color: white;
+  }
+
+  #services h2 {
+    text-align: start;
+    margin: auto;
+  }
+
+  #background_folio {
     background-color: var(--main-color);
     width: 100%;
   }
 
-  #folio_accueil{
+  #folio_accueil {
     text-align: start;
     padding-bottom: 2em;
   }
@@ -525,46 +642,36 @@ footer .tempsDaime {
     width: 30%;
   }
 
-  #container_formulaire_accueil{
+  #container_formulaire_accueil {
     background-color: white;
   }
 
-  #formulaire_desktop{
+  #formulaire_desktop {
     display: flex;
     justify-content: space-between;
   }
 
-  #texte_formulaire{
+  #texte_formulaire {
     text-align: start;
     width: 35%;
   }
 
-  #container_formulaire_accueil h2{
+  #container_formulaire_accueil h2 {
     margin-top: 0;
   }
 
-  #container_formulaire_accueil form{
+  #container_formulaire_accueil form {
     width: 50%;
   }
 
-  #container_formulaire_accueil form input{
+  #container_formulaire_accueil form input {
     width: 100%;
   }
 
-  footer #logo_reseaux{
-
+  footer #logo_reseaux {
     margin-top: 20px;
     height: 60px;
     width: auto;
   }
-
-
-
-  
-
-  
-
-
-
 
 }
