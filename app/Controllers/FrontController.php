@@ -48,6 +48,9 @@ class FrontController
 
     function portfolio()
     {
+        $folio = new \Projet\Models\PortfolioModel();
+        $categories = $folio->afficheCategories();
+        $portfolio = $folio->afficheFolio();
         require "app/Views/Front/portfolio.php";
     }
 
@@ -57,23 +60,5 @@ class FrontController
         $articles = $article->afficheArticle();
         require "app/Views/Front/blog.php";
     } 
-
-    function contact()
-    {
-        require "app/Views/Front/contact.php";
-    }
-
-    function contactPost($name, $mail, $subject, $content)
-    {
-        $postMail = new \Projet\Models\ContactModel();
-
-        if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-            $mail = $postMail->postMail($name, $mail, $subject, $content);
-            require 'app/Views/Front/contact.php';
-        }else{
-            header('Location: app/Views/Front/erreur.php');
-        }
-    }
-
 
 }

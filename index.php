@@ -27,9 +27,6 @@ try{
             $frontController->blog();
         }
 
-        elseif($_GET['action'] == 'contact'){
-            $frontController->contact();
-        }
 
         elseif($_GET['action'] == 'contactPost'){
             $name = htmlspecialchars($_POST['name']);

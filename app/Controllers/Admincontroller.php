@@ -4,18 +4,6 @@ namespace Projet\Controllers;
 
 class AdminController
 {
-    // function dashboard()
-    // {
-    //     $contact = new \Projet\Models\ContactModel();
-    //     $utilisateurs = new \Projet\Models\UtilisateursModel();
-
-    //     $countContact = $contact->nbrContact();
-    //     $countMail = $contact->nbrMail();
-    //     $countUsers = $utilisateurs->nbrCompteUtilisateurs();
-        
-    //     require 'app/views/Admin/Dashboard.php';
-    // }
-
     public function connexionAdmin(){
         require 'app\Views\Admin\connexion_admin.php';
     }
@@ -40,7 +28,7 @@ class AdminController
         $connexAdm = $userManager->recupMdp($mail, $mdp);
 
         $resultat = $connexAdm->fetch();
-        if(!empty($result)){
+        if(!empty($resultat)){
 
             $isPasswordCorrect = password_verify($mdp, $resultat['mdp']);
             if ($isPasswordCorrect) {
@@ -244,6 +232,4 @@ class AdminController
         
         require "app/Views/Admin/portfolio_admin.php";   
     }
-
-
 }

@@ -22,7 +22,6 @@
                         <a href="index.php?action=aPropos"><li>A Propos</li></a>        
                         <a href="index.php?action=portfolio"><li>Portfolio</li></a>
                         <a href="index.php?action=blog"><li>Blog</li></a>
-                        <a href="index.php?action=contact"><li>Contact</li></a>
                     </ul>
                 </div>
                 <ul id="menu_desktop">
@@ -30,7 +29,6 @@
                         <a href="index.php?action=aPropos"><li>A Propos</li></a>
                         <a href="index.php?action=portfolio"><li>Portfolio</li></a>
                         <a href="index.php?action=blog"><li>Blog</li></a>
-                        <a href="index.php?action=contact"><li>Contact</li></a>
                     </ul>
             </nav>
             <div class="tempsDaime">

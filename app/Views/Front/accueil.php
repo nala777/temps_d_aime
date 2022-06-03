@@ -48,7 +48,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor interdum ligula, eu hendrerit orci semper sed. Nam dignissim tortor sit amet neque blandit porttitor. Sed vitae viverra tellus. Nunc. </p>
         </div>
             <form id="contact" action="index.php?action=accueilPost" method="post">
-                <input aria-label="nom" placeholder="Votre nom" name="name" type="text" required autofocus>
+                <input aria-label="nom" placeholder="Votre nom" name="name" type="text" required>
                 <input aria-label="email" placeholder="Votre Email" name="mail" type="mail" required>
                 <input class="message_tablette" aria-label="Sujet" placeholder="Votre Sujet" name="subject" type="text" required>
                 <textarea class="message_tablette" placeholder="Votre message" name="content" required></textarea>
