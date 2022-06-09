@@ -18,17 +18,17 @@
                         <span></span>
                         <span></span>
                         <ul id="menu">
-                            <a href="indexAdmin.php"><li>DashBoard</li></a>
-                            <li>Contenu Page
+                            <a href="indexAdmin.php"><li>Home</li></a>
+                            <li>Modif Page
                                 <ul>
                                     <a href="indexAdmin.php?action=a_propos_admin"><li>A Propos</li></a>
-                                    <!-- <a href="indexAdmin.php?action=services_admin"><li>Services</li></a> -->
                                     <a href="indexAdmin.php?action=portfolio_admin"><li>Portfolio</li></a>
                                     <a href="indexAdmin.php?action=blog_admin"><li>Blog</li></a>
                                 </ul>
                             </li>
                             <a href="indexAdmin.php?action=compte_admin"><li>Mon Compte</li></a>
                             <a href="indexAdmin.php?action=deconnexion"><li>Deconnexion</li></a>
+                            <a href="index.php"><li>Retour sur le site</li></a>
                         </ul>
                     </div>
                 </nav>

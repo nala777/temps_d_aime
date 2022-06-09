@@ -20,6 +20,49 @@ p{
     margin:auto;
 }
 
+/* -------------------------------------Connexion Admin----------------------- */
+
+#connexion_admin h1 {
+  text-align: center;
+  color: var(--button-color);
+}
+#connexion_admin form {
+  max-width: 500px;
+  border: 2px solid #ccc;
+  padding: 30px;
+  background: #fff;
+  border-radius: 15px;
+  margin: 0 auto;
+}
+#connexion_admin input {
+  display: block;
+  border: 2px solid #ccc;
+  width: 95%;
+  padding: 10px;
+  margin: 10px auto 25px;
+  border-radius: 5px;
+}
+#connexion_admin label {
+  color: #888;
+  font-size: 18px;
+}
+#connexion-submit {
+  display: block;
+  background-color: var(--button-color);
+  text-align: center;
+  font-size: 16px;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#connexion-submit:hover {
+  transform: scale(1.05);
+}
+
+
 /* --------------------------------------Header------------------------------ */
 
 header{
@@ -32,6 +75,8 @@ header{
   align-items: center;
   color: white;
 }
+
+
 
 /* ---------------------------Menu----------------- */
 #menuToggle

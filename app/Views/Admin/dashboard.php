@@ -1,19 +1,19 @@
 <?php ob_start(); ?>
 <main class="container">
 
-<h2>Bonjour <?= $_SESSION['prenom'] ?> <?= $_SESSION['nom'] ?> </h2>
+<h1>Bonjour <?= $_SESSION['prenom'] ?> <?= $_SESSION['nom'] ?> </h1>
     <div id="stats">
         
         <div class="stat">
             <div>
-                <h3><?= $countContact['countContact'] ?> Nombre de contact</h3>
+                <h2><?= $countContact['countContact'] ?> Nombre de contact</h2>
                 <p><a href="#">Voir tout les contact</a></p>
             </div>
             <img src="app\public\Administration\img\contact.png">
         </div>
         <div class="stat">
             <div>
-                <h3><?= $countMail['countMail'] ?> Mail Reçu</h3>
+                <h2><?= $countMail['countMail'] ?> Mail Reçu</h2>
                 <p><a href="#">Voir tout les mails</a></p>
             </div>
             <img src="app\public\Administration\img\mail.png">
