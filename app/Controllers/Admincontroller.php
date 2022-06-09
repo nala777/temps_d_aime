@@ -58,6 +58,7 @@ class AdminController
     // Traitement de fichiers images
 
     public function upload($file){
+        var_dump($file);die;
         $tmpName = $file['tmp_name'];
         $name = $file['name'];
         $size = $file['size'];

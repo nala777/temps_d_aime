@@ -37,5 +37,5 @@ class PortfolioModel extends TempsDaimeOrm
         $req = $bdd->prepare("DELETE FROM portfolio WHERE id = ?");
         $req->execute(array($idFolio));
     }
-    
+   
 }

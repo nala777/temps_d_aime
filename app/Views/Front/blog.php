@@ -1,16 +1,16 @@
 <?php ob_start(); ?>
 <main class="container">
-    <div id="slider"></div>
     <section id="blog">
         <?php foreach($articles as $article){?>
             <article class="article">
                 <img src="<?= ($article['image']) ?>" alt="<?= ($article['descriptif_image'])?>">
-                <div class="info_article">
-                    <p>Publié le <?= ($article['date']) ?> - <?= ($article['categorie']) ?></p>
+                <div class="info_article article_blog">
                     <h2><?= ($article['titre']) ?></h2>
+                    <p>Publié le <?= ($article['date']) ?></p>
+                    <p>Catégorie : <?= ($article['categorie']) ?></p>  
                 </div>
-            </article>
-        
+                <a href="index.php?action=article&id=<?=($article['id'])?>" class="lire">Lire l'article</a>
+            </article>   
         <?php } ?>
     </section>
 

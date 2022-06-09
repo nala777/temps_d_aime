@@ -372,7 +372,6 @@ footer .tempsDaime {
   margin: 2em auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 #folio_accueil h2 {
@@ -393,7 +392,7 @@ footer .tempsDaime {
 #titre_folio{
   width: 100%;
   text-align: center;
-  padding-top: 30px;
+  padding: 10px 0;
 }
 
 #filtre_folio{
@@ -456,13 +455,14 @@ footer .tempsDaime {
 
 /* --------------------------------Blog-------------------------- */
 
-
+#blog{
+  margin-bottom: 50px;
+}
 
 .article {
   width: 100%;
-  margin: 15px 0;
+  margin: 6px 0;
   border-radius: 22px;
-  /* display: flex; */
   background-color: var(--main-color);
   justify-content: space-between;
   border: solid 1px rgba(128, 128, 128, 0.529);
@@ -479,8 +479,47 @@ footer .tempsDaime {
   margin: 0 10px;
 }
 
-.info_article h2 {
+.article_blog p{
   font-size: 1.2rem;
+  margin: -2px 0;
+}
+
+.info_article h2 {
+  font-size: 1.5rem;
+  margin: 6px 0;
+}
+
+.article a{
+  display: block;
+  width: 105px;
+  text-align: center;
+  height: 23px;
+  font-size: 1.1rem;
+  margin: 15px auto;
+  color: white;
+  background-color: var(--button-color);
+  border-radius: 5px;
+  border: none;
+}
+
+#oneArticle{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+#oneArticle .info_article{
+  text-align: center;
+  width: 100%;
+}
+
+#oneArticle img{
+  width: 80%;
+  height: auto;
+  margin: auto;
+  border-radius: 22px;
 }
 
 
@@ -561,9 +600,7 @@ textarea {
     margin: 30px 0;
   }
 
-  #folio_accueil article {
-    width: 45%;
-  }
+  
 
   #container_formulaire_accueil form {
     flex-direction: row;
@@ -580,10 +617,45 @@ textarea {
     width: 100%;
   }
 
+  #folio_accueil article {
+      width: 45%;
+      margin: 2.5%;
+  }
 
+  #blog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .article{
+    width: 49%;
+  }
+
+  
 
 }
 
+@media screen and (min-width : 800px) {
+
+  #oneArticle{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #oneArticle .info_article{
+    text-align: end;
+    width: 50%;
+  }
+
+  #oneArticle img{
+    width: 45%;
+    height: auto;
+    border-radius: 22px;
+  }
+}
 @media screen and (min-width : 1024px) {
 
   body {
@@ -706,6 +778,7 @@ textarea {
 
   #folio_accueil article {
     width: 30%;
+    margin : 1.5%
   }
 
   #container_formulaire_accueil {
@@ -732,6 +805,10 @@ textarea {
 
   #container_formulaire_accueil form input {
     width: 100%;
+  }
+
+  .article{
+    width: 32%;
   }
 
   footer #logo_reseaux {

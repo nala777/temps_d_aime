@@ -12,6 +12,14 @@ class BlogModel extends TempsDaimeOrm
         return $req;
     }
 
+    public function article($idArticle)
+    {
+        $bdd = $this->connect();
+        $req = $bdd->prepare("SELECT categorie,image,descriptif_image,DATE_FORMAT(date_article, '%d/%m/%Y') AS date,titre,texte FROM blog , categories WHERE categories.id = blog.id_categorie AND blog.id = ?");
+        $req->execute(array($idArticle));
+        return $req->fetch(); 
+    }
+
     public function lastArticles()
     {
         $bdd = $this->connect();

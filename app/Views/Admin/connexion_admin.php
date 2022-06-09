@@ -1,5 +1,5 @@
 <?php ob_start(); ?>
-<main>
+<main class="container">
     <form id="contact" action="indexAdmin.php?action=connexionAdmin" method="post">
         <input placeholder="Mail" name="mail" type="text" required autofocus>
         <input placeholder="Votre Mdp" name="password" type="password" required>
@@ -16,4 +16,4 @@
 </main>
 <?php $content = ob_get_clean(); ?>
 <?php $title = "Connexion Admin" ?>
-<?php require 'templates/template.php' ?>
+<?php require 'app/Views/Front/templates/template.php' ?>

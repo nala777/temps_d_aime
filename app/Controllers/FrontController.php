@@ -4,7 +4,7 @@ namespace Projet\Controllers;
 
 class FrontController
 {
-    function accueil()
+    public function accueil()
     {   
         $propos = new \Projet\Models\AProposModel();
         $servicesAccueil = new \Projet\Models\ServicesModel();
@@ -16,7 +16,7 @@ class FrontController
         require "app/Views/Front/accueil.php";
     }
 
-    function accueilPost($name, $mail, $subject, $content)
+    public function accueilPost($name, $mail, $subject, $content)
     {
         $accueil = new \Projet\Models\AccueilModel();
         $propos = new \Projet\Models\AProposModel();
@@ -31,7 +31,7 @@ class FrontController
         }
     }
 
-    function aPropos()
+    public function aPropos()
     {
         $propos = new \Projet\Models\AProposModel();
         $allPropos = $propos->affichePropos();
@@ -39,14 +39,14 @@ class FrontController
     }
 
 
-    function services()
+    public function services()
     {
         $services = new \Projet\Models\ServicesModel();
         $allServices = $services->afficheServices();
         require "app/Views/Front/services.php";
     }
 
-    function portfolio()
+    public function portfolio()
     {
         $folio = new \Projet\Models\PortfolioModel();
         $categories = $folio->afficheCategories();
@@ -54,11 +54,18 @@ class FrontController
         require "app/Views/Front/portfolio.php";
     }
 
-    function blog()
+    public function blog()
     {
         $article = new \Projet\Models\BlogModel();
         $articles = $article->afficheArticle();
         require "app/Views/Front/blog.php";
-    } 
+    }
+    
+    public function article($idArticle)
+    {
+        $article = new \Projet\Models\BlogModel();
+        $articleSimple = $article->article($idArticle);
+        require "app/Views/Front/article.php";
+    }
 
 }
