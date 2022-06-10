@@ -5,30 +5,31 @@
     <div id="stats">
         
         <div class="stat">
-            <div>
+            <div class="stat_info">
                 <h2><?= $countContact['countContact'] ?> Nombre de contact</h2>
                 <p><a href="#">Voir tout les contact</a></p>
             </div>
-            <img src="app\public\Administration\img\contact.png">
+            <img src="app/public/Administration/img/contact.png">
         </div>
         <div class="stat">
-            <div>
+            <div class="stat_info">
                 <h2><?= $countMail['countMail'] ?> Mail Reçu</h2>
-                <p><a href="#">Voir tout les mails</a></p>
+                <a href="#">Voir tout les mails</a>
             </div>
-            <img src="app\public\Administration\img\mail.png">
+            <img src="app/public/Administration/img/mail.png">
         </div>
     </div>
     <h2>Derniers Articles</h2>
-    <section id="articles">
+    <section id="blog">
         <?php foreach($derniersArticles as $article){ ?>
-            <div class="article">
-                <img class="img_article" src="<?= ($article['image']) ?>" alt="<?= ($article['descriptif_image'])?>">
-                <div class="texte_article">
-                    <p>Publié le <?= ($article['date']) ?> - <?= ($article['categorie']) ?></p>
-                    <h4><?= ($article['titre']) ?></h4>
+            <article class="article">
+                <img src="<?= ($article['image']) ?>" alt="<?= ($article['descriptif_image'])?>">
+                <div class="info_article article_blog">
+                    <h2><?= ($article['titre']) ?></h2>
+                    <p>Publié le <?= ($article['date']) ?></p>
+                    <p>Catégorie : <?= ($article['categorie']) ?></p>  
                 </div>
-            </div>
+            </article>
         <?php } ?>
     </section>
     

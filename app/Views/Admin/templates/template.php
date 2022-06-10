@@ -18,20 +18,31 @@
                         <span></span>
                         <span></span>
                         <ul id="menu">
-                            <a href="indexAdmin.php"><li>Home</li></a>
-                            <li>Modif Page
-                                <ul>
-                                    <a href="indexAdmin.php?action=a_propos_admin"><li>A Propos</li></a>
-                                    <a href="indexAdmin.php?action=portfolio_admin"><li>Portfolio</li></a>
-                                    <a href="indexAdmin.php?action=blog_admin"><li>Blog</li></a>
-                                </ul>
-                            </li>
+                            <a href="indexAdmin.php?action=dashboard"><li>Home</li></a>
+                            <ul>
+                                <a href="indexAdmin.php?action=a_propos_admin"><li>A Propos</li></a>
+                                <a href="indexAdmin.php?action=portfolio_admin"><li>Portfolio</li></a>
+                                <a href="indexAdmin.php?action=blog_admin"><li>Blog</li></a>
+                            </ul>
                             <a href="indexAdmin.php?action=compte_admin"><li>Mon Compte</li></a>
-                            <a href="indexAdmin.php?action=deconnexion"><li>Deconnexion</li></a>
                             <a href="index.php"><li>Retour sur le site</li></a>
+                            <a href="indexAdmin.php?action=deconnexion"><li>Deconnexion</li></a>
                         </ul>
+                        
                     </div>
+                    <ul id="menu_desktop">
+                        <a href="indexAdmin.php?action=dashboard"><li>Home</li></a>
+                        <a href="indexAdmin.php?action=a_propos_admin"><li>A Propos</li></a>
+                        <a href="indexAdmin.php?action=portfolio_admin"><li>Portfolio</li></a>
+                        <a href="indexAdmin.php?action=blog_admin"><li>Blog</li></a>
+                        <a href="indexAdmin.php?action=compte_admin"><li>Mon Compte</li></a>
+                        <a href="index.php"><li>Retour sur le site</li></a>
+                        <a href="indexAdmin.php?action=deconnexion"><li>Deconnexion</li></a>
+                    </ul>
                 </nav>
+                
+                
+                
                 <h2>Administration</h2>
             </div>
         </header>

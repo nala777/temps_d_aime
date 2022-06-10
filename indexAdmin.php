@@ -36,11 +36,17 @@ try {
             }
         }
 
+        
+
         elseif ($_GET['action'] == 'deconnexion'){
             session_destroy();
             header('Location: index.php');
         }
 
+        elseif ($_GET['action'] == 'dashboard') {
+                    $backController->dashboard();
+        }
+        
         //          A PROPOS ADMIN
 
         elseif($_GET['action'] == 'a_propos_admin'){

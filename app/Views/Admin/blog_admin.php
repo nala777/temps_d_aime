@@ -1,5 +1,5 @@
 <?php ob_start(); ?>
-<main>
+<main class="container">
 
 <h2>Ajout d'un nouvel article</h2>
 <a href ="indexAdmin.php?action=ajout_blog">Ajouter</a>
@@ -9,9 +9,10 @@
         <?php foreach($articles as $article){?>
             <article class="article">
                 <img src="<?= ($article['image']) ?>" alt="<?= ($article['descriptif_image'])?>">
-                <div class="info_article">
-                    <p>Publié le <?= ($article['date']) ?> - <?= ($article['categorie']) ?></p>
+                <div class="info_article article_blog">
                     <h2><?= ($article['titre']) ?></h2>
+                    <p>Publié le <?= ($article['date']) ?></p>
+                    <p>Catégorie : <?= ($article['categorie']) ?></p>  
                 </div>
                 <div class="action_bouton">
                     <a href="indexAdmin.php?action=modif_article&id=<?=($article['id'])?>">Modifier</a>

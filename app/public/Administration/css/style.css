@@ -1,23 +1,37 @@
-*{
+* {
   font-family: 'Roboto', sans-serif;
 }
 
-body{
-    margin: 0;
-    padding: 0;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-:root{
+:root {
   --button-color: #489CFF;
 }
 
-p{
-  font-size: 0.9rem;
+p {
+  font-size: 1.2em;
+  font-weight: 300;
+  line-height: 20px;
 }
 
-.container{
-    width: 95%;
-    margin:auto;
+h1 {
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+
+.container {
+  max-width: 1200px;
+  width: 95%;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 /* -------------------------------------Connexion Admin----------------------- */
@@ -26,6 +40,7 @@ p{
   text-align: center;
   color: var(--button-color);
 }
+
 #connexion_admin form {
   max-width: 500px;
   border: 2px solid #ccc;
@@ -34,6 +49,7 @@ p{
   border-radius: 15px;
   margin: 0 auto;
 }
+
 #connexion_admin input {
   display: block;
   border: 2px solid #ccc;
@@ -42,10 +58,12 @@ p{
   margin: 10px auto 25px;
   border-radius: 5px;
 }
+
 #connexion_admin label {
   color: #888;
   font-size: 18px;
 }
+
 #connexion-submit {
   display: block;
   background-color: var(--button-color);
@@ -58,6 +76,7 @@ p{
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 #connexion-submit:hover {
   transform: scale(1.05);
 }
@@ -65,11 +84,11 @@ p{
 
 /* --------------------------------------Header------------------------------ */
 
-header{
+header {
   background-color: black;
 }
 
-#entete_admin{
+#entete_admin {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -79,66 +98,68 @@ header{
 
 
 /* ---------------------------Menu----------------- */
-#menuToggle
-{
+nav a {
+  color: white;
+}
+
+
+#menuToggle {
   display: block;
   position: relative;
   width: 5%;
   top: 2px;
   left: 0;
   z-index: 1;
-  
+
   -webkit-user-select: none;
   user-select: none;
 }
 
-#menuToggle input
-{
+#menuToggle input {
   display: block;
   width: 40px;
   height: 32px;
   position: absolute;
   top: -7px;
   left: -8px;
-  
+
   cursor: pointer;
-  
-  opacity: 0; /* hide this */
-  z-index: 2; /* and place it over the hamburger */
-  
+
+  opacity: 0;
+  /* hide this */
+  z-index: 2;
+  /* and place it over the hamburger */
+
   -webkit-touch-callout: none;
 }
 
 /*
  * Just a quick hamburger
  */
-#menuToggle span
-{
+#menuToggle span {
   display: block;
   width: 33px;
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-  
+
   background: white;
   border-radius: 3px;
-  
+
   z-index: 1;
-  
+
   transform-origin: 4px 0px;
-  
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    opacity 0.55s ease;
 }
 
-#menuToggle span:first-child
-{
+#menuToggle span:first-child {
   transform-origin: 0% 0%;
 }
 
-#menuToggle span:nth-last-child(2)
-{
+#menuToggle span:nth-last-child(2) {
   transform-origin: 0% 100%;
 }
 
@@ -146,8 +167,7 @@ header{
  * Transform all the slices of hamburger
  * into a crossmark.
  */
-#menuToggle input:checked ~ span
-{
+#menuToggle input:checked~span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: white;
@@ -156,8 +176,7 @@ header{
 /*
  * But let's hide the middle one.
  */
-#menuToggle input:checked ~ span:nth-last-child(3)
-{
+#menuToggle input:checked~span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
@@ -165,8 +184,7 @@ header{
 /*
  * Ohyeah and the last one should go the other direction
  */
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
+#menuToggle input:checked~span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
@@ -174,46 +192,42 @@ header{
  * Make this absolute positioned
  * at the top left of the screen
  */
-#menu
-{
+#menu {
   position: absolute;
   width: 200px;
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
-  
+
   background: black;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
-  
+
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
-  
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 }
 
-#menu li
-{
+#menu li {
   list-style-type: none;
   padding: 10px 0;
   font-size: 22px;
 }
 
-#menu a{
+#menu a {
   color: white;
 }
 
 /*
  * And let's slide it in from the left
  */
-#menuToggle input:checked ~ ul
-{
+#menuToggle input:checked~ul {
   transform: none;
 }
 
 
-#menu li
-{
+#menu li {
   padding: 10px 0;
   font-size: 22px;
 }
@@ -221,9 +235,12 @@ header{
 /*
  * And let's slide it in from the left
  */
-#menuToggle input:checked ~ ul
-{
+#menuToggle input:checked~ul {
   transform: none;
+}
+
+#menu_desktop {
+  display: none;
 }
 
 /* ----------------------------------------ADMIN-------------------------*/
@@ -231,12 +248,12 @@ header{
 
 /* ------------------------Dashboard-------------- */
 
-#stats{
+#stats {
   width: 100%;
   margin: 15px 0;
 }
 
-.stat{
+.stat {
   width: 100%;
   margin: 15px 0;
   border: solid grey 1px;
@@ -244,16 +261,37 @@ header{
   justify-content: space-between;
 }
 
-.stat img{
+.stat_info {
+  padding-left: 15px;
+}
+
+.stat_info a {
+  display: block;
+  width: 178px;
+  text-align: center;
+  padding: 5px 0;
+  height: 22px;
+  font-size: 1.1rem;
+  color: white;
+  background-color: var(--button-color);
+  border-radius: 5px;
+  border: none;
+}
+
+.stat img {
   height: 100px;
   width: auto;
+  padding: 15px;
 }
 
-#articles{
+#articles {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.article{
+.article {
   width: 100%;
   margin: 15px 0;
   border-radius: 22px;
@@ -263,55 +301,55 @@ header{
   border: solid 1px rgba(128, 128, 128, 0.529);
 }
 
-.article img{
+.article img {
   width: 100%;
   height: 150px;
   object-fit: cover;
   border-radius: 22px 22px 0 0;
 }
 
-.info_article{
+.info_article {
   margin: 0 10px;
 }
 
-.info_article h2{
+.info_article h2 {
   font-size: 1.2rem;
 }
 
 
 /* ---------------------A propos----------------- */
 
-.a_propos{
+.a_propos {
   margin-top: 5px;
   position: relative;
   text-align: center;
 }
 
-.img_propos{
+.img_propos {
   width: 100%;
   height: 250px;
   object-fit: cover;
 }
 
-.texte_propos{
+.texte_propos {
   position: absolute;
   color: white;
-  top:0;
+  top: 0;
   left: 20%;
   width: 60%;
 }
 
 /* ----------------------Services------------------- */
 
-#services{
+#services {
   width: 100%;
 }
 
-#services h1{
+#services h1 {
   text-align: center;
 }
 
-.service{
+.service {
   border: 1px solid rgba(128, 128, 128, 0.599);
   border-radius: 10px;
   margin: 20px 0;
@@ -319,7 +357,7 @@ header{
   text-align: center;
 }
 
-.service .logo{
+.service .logo {
   width: 140px;
   height: 140px;
   padding: 10px;
@@ -328,30 +366,132 @@ header{
   background-color: var(--main-color);
   display: flex;
   align-items: center;
-} 
+}
 
-.service .logo img{
+.service .logo img {
   height: 125px;
   width: 125px;
   display: block;
   margin: auto;
 }
 
-.service .info_service h2{
-  margin: 25px 0 50px 0; 
+.service .info_service h2 {
+  margin: 25px 0 50px 0;
 }
 
 /* ------------------------Portfolio--------------- */
 
-#portfolio{
+#portfolio {
   width: 100%;
 }
 
-#portfolio img{
+#portfolio img {
   width: 100%;
 }
 
+#blog {
+  margin-bottom: 50px;
+}
 
+#blog .action_bouton{
+  display: flex;
+}
 
+.article {
+  width: 100%;
+  margin: 6px 0;
+  border-radius: 22px;
+  background-color: var(--main-color);
+  justify-content: space-between;
+  border: solid 1px rgba(128, 128, 128, 0.529);
+}
 
+.article img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 22px 22px 0 0;
+}
 
+.info_article {
+  margin: 10px 10px;
+}
+
+.article_blog p {
+  font-size: 1.2rem;
+  margin: -2px 0;
+}
+
+.info_article h2 {
+  font-size: 1.5rem;
+  margin: 11px 0;
+}
+
+.article a {
+  display: block;
+  width: 105px;
+  text-align: center;
+  height: 23px;
+  font-size: 1.1rem;
+  margin: 10px;
+  color: white;
+  background-color: var(--button-color);
+  border-radius: 5px;
+  border: none;
+}
+
+@media screen and (min-width: 600px) {
+
+  #blog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .article {
+    width: 49%;
+  }
+
+}
+
+@media screen and (min-width: 800px) {
+
+  #stats {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .stat {
+    width: 49%
+  }
+
+  .article {
+    width: 49%;
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+  #menuToggle {
+    display: none;
+  }
+
+  #menu_desktop {
+    display: flex;
+    list-style: none;
+    padding-left: 0px;
+  }
+
+  #menu_desktop a{
+    font-size: 1.2rem;
+  }
+
+  #menu_desktop li {
+    margin-right: 20px;
+  }
+
+  .article {
+    width: 32%;
+  }
+}

@@ -81,6 +81,16 @@ class AdminController
         }
     }
 
+    public function dashboard(){
+        $contact = new \Projet\Models\ContactModel();
+        $article = new \Projet\Models\BlogModel();
+        $countContact = $contact->nbrContact();
+        $countMail = $contact->nbrMail();
+        $derniersArticles = $article->lastArticles();
+            
+        require 'app/views/Admin/dashboard.php';
+    }
+
     //                                         A Propos
 
     public function a_propos_admin(){
