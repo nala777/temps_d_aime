@@ -15,22 +15,22 @@
                 <form action="indexAdmin.php?action=connexionAdmin" method="post">
                     <div>
                         <label for="email"> Email:</label>
-                        <input type="email" name="mail" id="email" placeholder="Votre email" required>
+                        <input aria-label="email" type="email" name="mail" id="email" placeholder="Votre email" required>
                     </div>
 
                     <div>
                         <label for="password"> Mot de Passe:</label>
-                        <input type="password" name="password" id="password" placeholder="Votre mot de passe" required>
+                        <input aria-label="mot_de_passe" type="password" name="password" id="password" placeholder="Votre mot de passe" required>
                     </div>
                     <button id="connexion-submit" type="submit">Connexion</button>
                 </form>
             
 
         <!-- <form id="contact" action="indexAdmin.php?action=createAdmin" method="post">
-            <input placeholder="Votre Prenom" name="firstname" type="text" required autofocus>
-            <input placeholder="Votre nom" name="lastname" type="text" required>
-            <input placeholder="Votre Email" name="mail" type="mail" required>
-            <input placeholder="Votre Mdp" name="password" type="password" required>
+            <input aria-label="" placeholder="Votre Prenom" name="firstname" type="text" required autofocus>
+            <input aria-label="" placeholder="Votre nom" name="lastname" type="text" required>
+            <input aria-label="" placeholder="Votre Email" name="mail" type="mail" required>
+            <input aria-label="" placeholder="Votre Mdp" name="password" type="password" required>
             <button name="submit" type="submit" id="create-admin">Envoyer</button>
         </form> -->
             </section>

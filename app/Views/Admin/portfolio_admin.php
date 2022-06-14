@@ -2,8 +2,8 @@
 <main class="container">
     <h1>Modification Portfolio</h1>
     <form class="formulaire" action="indexAdmin.php?action=ajout_folio" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" required>
-        <input placeholder="Descriptif image" name="descriptif" type="text" required >
+        <input aria-label="image" type="file" name="file" required>
+        <input aria-label="descriptif_image" placeholder="Descriptif image" name="descriptif" type="text" required >
         <select name="categories">
             <?php foreach($categories as $categorie) {?>
                 <option value="<?= $categorie['id']?>"><?= $categorie['nom'] ?></option>
