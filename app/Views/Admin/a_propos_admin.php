@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
-<main>
+<main class="container" id="propos">
     <?php foreach($allPropos as $propos){ ?>
-        <div class="a_propos container">
+        <div class="a_propos">
             <img class="img_propos" src="<?= ($propos['image']) ?>" alt="<?= ($propos['descriptif_image'])?>">
             <div class="texte_propos">
                 <h2><?= ($propos['titre']) ?></h2>

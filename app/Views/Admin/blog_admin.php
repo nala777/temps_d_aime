@@ -2,7 +2,7 @@
 <main class="container">
 
 <h2>Ajout d'un nouvel article</h2>
-<a href ="indexAdmin.php?action=ajout_blog">Ajouter</a>
+<a class="button" id="blog_button" href ="indexAdmin.php?action=ajout_blog">Ajouter</a>
 
 
 <section id="blog">

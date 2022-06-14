@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
 <main class="container">
     <h1>Modification Portfolio</h1>
-    <form action="indexAdmin.php?action=ajout_folio" method="POST" enctype="multipart/form-data">
+    <form id="new_folio" action="indexAdmin.php?action=ajout_folio" method="POST" enctype="multipart/form-data">
         <input type="file" name="file" required>
         <input placeholder="Descriptif" name="descriptif" type="text" required autofocus>
         <select name="categories">
@@ -13,10 +13,10 @@
     </form>
     <div id="portfolio">
         <?php foreach($portfolio as $folio){ ?>
-            <div class="">
+            <div class="image_folio">
                 <img src="<?= $folio['image']?>" alt <?= $folio['alt']?>>
-                <h4><?= $folio['nom']?></h4>
-                <a href="indexAdmin.php?action=suppr_folio&id=<?=($folio['id'])?>">Supprimer</a>
+                <h2>Catégorie - <?= $folio['nom']?></h2>
+                <a class="button folio_button" href="indexAdmin.php?action=suppr_folio&id=<?=($folio['id'])?>">Supprimer</a>
             </div>
         <?php }?>
     </div>

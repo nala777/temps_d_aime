@@ -22,6 +22,18 @@ h1 {
   font-size: 2rem;
 }
 
+.button {
+  display: block;
+  width: 105px;
+  text-align: center;
+  height: 23px;
+  font-size: 1.1rem;
+  margin: 10px;
+  color: white;
+  background-color: var(--button-color);
+  border-radius: 5px;
+  border: none;
+}
 
 .container {
   max-width: 1200px;
@@ -195,11 +207,11 @@ nav a {
 #menu {
   position: absolute;
   width: 200px;
+  border-radius: 0 0 22px 0;
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
-
-  background: black;
+  background: #000000b0;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
 
@@ -241,6 +253,15 @@ nav a {
 
 #menu_desktop {
   display: none;
+}
+
+#liste ul{
+  display: none;
+  list-style: none;
+}
+
+#liste:hover ul{
+  display: block;
 }
 
 /* ----------------------------------------ADMIN-------------------------*/
@@ -329,14 +350,29 @@ nav a {
   width: 100%;
   height: 250px;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .texte_propos {
   position: absolute;
   color: white;
   top: 0;
-  left: 20%;
-  width: 60%;
+  left: 14%;
+  width: 72%;
+}
+
+.a_propos a{
+  display: block;
+  width: 105px;
+  
+  text-align: center;
+  height: 23px;
+  font-size: 1.1rem;
+  margin: 10px auto;
+  color: white;
+  background-color: var(--button-color);
+  border-radius: 5px;
+  border: none;
 }
 
 /* ----------------------Services------------------- */
@@ -381,20 +417,43 @@ nav a {
 
 /* ------------------------Portfolio--------------- */
 
+#new_folio{
+  margin-bottom: 25px;
+}
+
 #portfolio {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 #portfolio img {
   width: 100%;
+  border-radius: 20px;
+}
+
+.folio_button{
+  margin: auto auto 15px;
+}
+
+.image_folio h2{
+  font-size: 1.3rem;
+  text-align: center;
 }
 
 #blog {
   margin-bottom: 50px;
 }
 
+#blog_button {
+  margin: 10px 0;
+}
+
 #blog .action_bouton{
   display: flex;
+  margin: auto;
+  width: 65%;
 }
 
 .article {
@@ -429,7 +488,7 @@ nav a {
 
 .article a {
   display: block;
-  width: 105px;
+  width: 115px;
   text-align: center;
   height: 23px;
   font-size: 1.1rem;
@@ -452,9 +511,32 @@ nav a {
     width: 49%;
   }
 
+  .texte_propos {
+    position: absolute;
+    color: white;
+    top: 0;
+    left: 20%;
+    width: 60%;
+  }
+
+  .image_folio {
+    width: 48%;
+  }
+
 }
 
 @media screen and (min-width: 800px) {
+
+  #propos {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .a_propos{
+
+    width: 49%;
+    margin: 6px auto;
+  }
 
   #stats {
     display: flex;
@@ -467,6 +549,10 @@ nav a {
 
   .article {
     width: 49%;
+  }
+
+  .image_folio {
+    width: 32%;
   }
 
 }

@@ -18,11 +18,6 @@ class ServicesModel extends TempsDaimeOrm
         return $req;
     }
 
-    public function updateServices()
-    {
-        $bdd = $this->connect();
-        $req = $bdd->prepare("UPDATE");
-    }
 }
 
 ?>
