@@ -279,7 +279,6 @@ a:hover {
 }
 
 .tiret:nth-of-type(2),.tiret:nth-of-type(4){
-  width: 100;
   background-color: var(--main-color);
   text-align: center;
   margin-top: -5px;

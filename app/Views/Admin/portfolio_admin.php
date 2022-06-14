@@ -1,9 +1,9 @@
 <?php ob_start(); ?>
 <main class="container">
     <h1>Modification Portfolio</h1>
-    <form id="new_folio" action="indexAdmin.php?action=ajout_folio" method="POST" enctype="multipart/form-data">
+    <form class="formulaire" action="indexAdmin.php?action=ajout_folio" method="POST" enctype="multipart/form-data">
         <input type="file" name="file" required>
-        <input placeholder="Descriptif" name="descriptif" type="text" required autofocus>
+        <input placeholder="Descriptif image" name="descriptif" type="text" required >
         <select name="categories">
             <?php foreach($categories as $categorie) {?>
                 <option value="<?= $categorie['id']?>"><?= $categorie['nom'] ?></option>
