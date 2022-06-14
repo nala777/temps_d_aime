@@ -27,19 +27,28 @@ class AProposModel extends TempsDaimeOrm
         return $req->fetch();
     }
 
-    public function updatePropos($idArticle,$descriptif,$titre,$texte){
+    public function updatePropos($data){
         $bdd = $this->connect();
-        $req = $bdd->prepare("UPDATE a_propos SET descriptif_image = ? , titre = ?, texte = ? WHERE id = ?");
-        $req->execute(array($descriptif,$titre,$texte,$idArticle));
+        $req = $bdd->prepare("UPDATE a_propos SET descriptif_image = :descriptif , titre = :titre, texte = :texte WHERE id = :id");
+        $req->execute(array(
+            ":descriptif" => $data['descriptif'],
+            ":titre" => $data['titre'],
+            ":texte" => $data['texte'],
+            ":id" => $data['id']
+        ));
     }
 
-    public function updateProposImg($idArticle,$path,$descriptif,$titre,$texte){
+    public function updateProposImg($data){
         $bdd = $this->connect();
-        $req = $bdd->prepare("UPDATE a_propos SET image = ? , descriptif_image = ? , titre = ?, texte = ? WHERE id = ?");
-        $req->execute(array($path,$descriptif,$titre,$texte,$idArticle));
+        $req = $bdd->prepare("UPDATE a_propos SET image = :image , descriptif_image = :descriptif , titre = :titre, texte = :texte WHERE id = :id");
+        $req->execute(array(
+            ":image" => $data['image'],
+            ":descriptif" => $data['descriptif'],
+            ":titre" => $data['titre'],
+            ":texte" => $data['texte'],
+            ":id" => $data['id']
+        ));
     }
-
-    
 
 }
 

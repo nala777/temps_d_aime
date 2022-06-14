@@ -136,16 +136,16 @@ class AdminController
         require "app/Views/Admin/modif_a_propos.php";
     }
 
-    public function updatePropos($idArticle,$descriptif,$titre,$texte){
+    public function updatePropos($data){
         $propos = new \Projet\Models\AProposModel();
-        $UpdateP = $propos->updatePropos($idArticle,$descriptif,$titre,$texte);
+        $UpdateP = $propos->updatePropos($data);
         $allPropos = $propos->affichePropos();
         require "app/Views/Admin/a_propos_admin.php";
     }
 
-    public function updateProposImg($idArticle,$path,$descriptif,$titre,$texte){
+    public function updateProposImg($data){
         $propos = new \Projet\Models\AProposModel();
-        $UpdateP = $propos->updateProposImg($idArticle,$path,$descriptif,$titre,$texte);
+        $UpdateP = $propos->updateProposImg($data);
         $allPropos = $propos->affichePropos();
         require "app/Views/Admin/a_propos_admin.php";
     }
@@ -192,10 +192,10 @@ class AdminController
         require "app/Views/Admin/ajout_blog.php";
     }
 
-    public function upload_article($path,$descriptif,$titre,$texte,$categories)
+    public function upload_article($data)
     {
         $article = new \Projet\Models\BlogModel();
-        $article->upload($path,$descriptif,$categories,$titre,$texte);   
+        $article->upload($data);   
         $articles = $article->afficheArticle();
         require "app/Views/Admin/blog_admin.php";
     }
@@ -209,17 +209,17 @@ class AdminController
         require "app/Views/Admin/modif_article.php";
     }
 
-    public function updateArticle($idArticle,$descriptif,$titre,$texte,$categories){
+    public function updateArticle($data){
         $article = new \Projet\Models\BlogModel();
-        $article->updateArticle($idArticle,$descriptif,$titre,$texte,$categories);
+        $article->updateArticle($data);
         $articles = $article->afficheArticle();
         require "app/Views/Admin/blog_admin.php";
 
     }
 
-    public function updateArticleImg($idArticle,$path,$descriptif,$titre,$texte,$categories){
+    public function updateArticleImg($data){
         $article = new \Projet\Models\BlogModel();
-        $article->updateArticleImg($idArticle,$path,$descriptif,$titre,$texte,$categories);
+        $article->updateArticleImg($data);
         $articles = $article->afficheArticle();
         require "app/Views/Admin/blog_admin.php";
 

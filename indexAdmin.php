@@ -89,11 +89,23 @@ try {
                     if(!empty($file) && (!empty($descriptif) && (!empty($titre) && (!empty($texte))))){
                         $file = $_FILES['file'];
                         $path=$backController->upload($file);
-                        $backController->updateProposImg($idArticle,$path,$descriptif,$titre,$texte); 
+                        $data = [
+                            "id" => $idArticle,
+                            "image" => $path,
+                            "descriptif" => $descriptif,
+                            "titre" => $titre,
+                            "texte" => $texte
+                        ];
+                        $backController->updateProposImg($data); 
 
                     }elseif((!empty($descriptif) && (!empty($titre) && (!empty($texte))))) {
-                        
-                        $backController->updatePropos($idArticle,$descriptif,$titre,$texte);
+                        $data = [
+                            "id" => $idArticle,
+                            "descriptif" => $descriptif,
+                            "titre" => $titre,
+                            "texte" => $texte
+                        ];
+                        $backController->updatePropos($data);
 
                     
                     }else{
@@ -132,7 +144,15 @@ try {
                     $categories = $_POST['categories'];
                     if (!empty($file) && (!empty($descriptif) && (!empty($titre) && (!empty($texte) && (!empty($categories)))))) {
                         $path=$backController->upload($file);
-                        $backController->upload_article($path,$descriptif,$titre,$texte,$categories);
+                        $data = [
+                            "id" => $idArticle,
+                            "image" => $path,
+                            "descriptif" => $descriptif,
+                            "categorie" => $categories,
+                            "titre" => $titre,
+                            "texte" => $texte
+                        ];
+                        $backController->upload_article($data);
                     }else{
                         throw new Exception('Tous les champs ne sont pas remplis');
                     }
@@ -152,11 +172,25 @@ try {
                     if(!empty($file) && (!empty($descriptif) && (!empty($titre) && (!empty($texte) && (!empty($categories)))))){
                         $file = $_FILES['file'];
                         $path=$backController->upload($file);
-                        $backController->updateArticleImg($idArticle,$path,$descriptif,$titre,$texte,$categories);
+                        $data = [
+                            "id" => $idArticle,
+                            "image" => $path,
+                            "descriptif" => $descriptif,
+                            "titre" => $titre,
+                            "categorie" => $categories,
+                            "texte" => $texte
+                        ];
+                        $backController->updateArticleImg($data);
                         
                     }elseif (!empty($descriptif) && (!empty($titre) && (!empty($texte) && (!empty($categories))))) {
-            
-                        $backController->updateArticle($idArticle,$descriptif,$titre,$texte,$categories);
+                        $data = [
+                            "id" => $idArticle,
+                            "descriptif" => $descriptif,
+                            "titre" => $titre,
+                            "categorie" => $categories,
+                            "texte" => $texte
+                        ];
+                        $backController->updateArticle($data);
 
                     }else{
                         throw new Exception('Tous les champs ne sont pas remplis');

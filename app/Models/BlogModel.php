@@ -33,10 +33,17 @@ class BlogModel extends TempsDaimeOrm
         return $req;
     }
 
-    public function upload($path,$descriptif,$categories,$titre,$texte){
+    public function upload($data){
         $bdd = $this->connect();
-        $req = $bdd->prepare("INSERT INTO blog (image,descriptif_image,id_categorie,titre,texte) VALUE (?,?,?,?,?)");
-        $req->execute(array($path,$descriptif,$categories,$titre,$texte));
+        $req = $bdd->prepare("INSERT INTO blog (image,descriptif_image,id_categorie,titre,texte) VALUE (:image,:descriptif,:categorie,:titre,:texte)");
+        $req->execute(array(
+            ":image" => $data['image'],
+            ":descriptif" => $data['descriptif'],
+            ":titre" => $data['titre'],
+            ":texte" => $data['texte'],
+            ":categorie" => $data['categorie'],
+            ":id" => $data['id']
+        ));
     }
 
     public function ajoutCategorie($categorie){
@@ -52,17 +59,30 @@ class BlogModel extends TempsDaimeOrm
         return $req->fetch();
     }
 
-    public function updateArticle($idArticle,$descriptif,$titre,$texte,$categories){
+    public function updateArticle($data){
         $bdd = $this->connect();
         // var_dump($categories);die;
-        $req = $bdd->prepare("UPDATE blog SET descriptif_image = ? , titre = ?, texte = ?, id_categorie = ? WHERE id = ?");
-        $req->execute(array($descriptif,$titre,$texte,$categories,$idArticle));
+        $req = $bdd->prepare("UPDATE blog SET descriptif_image = :descriptif  , titre = :titre, texte = :texte, id_categorie = :categorie WHERE id = :id");
+        $req->execute(array(
+            ":descriptif" => $data['descriptif'],
+            ":titre" => $data['titre'],
+            ":texte" => $data['texte'],
+            ":categorie" => $data['categorie'],
+            ":id" => $data['id']
+        ));
     }
 
-    public function updateArticleImg($idArticle,$path,$descriptif,$titre,$texte,$categories){
+    public function updateArticleImg($data){
         $bdd = $this->connect();
-        $req = $bdd->prepare("UPDATE blog SET image = ? , descriptif_image = ? , titre = ?, texte = ?, id_categorie = ? WHERE id = ?");
-        $req->execute(array($path,$descriptif,$titre,$texte,$categories,$idArticle));
+        $req = $bdd->prepare("UPDATE blog SET image = :image , descriptif_image = :descriptif , titre = :titre, texte = :texte, id_categorie = :categorie WHERE id = :id");
+        $req->execute(array(
+            ":image" => $data['image'],
+            ":descriptif" => $data['descriptif'],
+            ":titre" => $data['titre'],
+            ":texte" => $data['texte'],
+            ":categorie" => $data['categorie'],
+            ":id" => $data['id']
+        ));
     }
 
     public function supprimerArticle($idArticle){
