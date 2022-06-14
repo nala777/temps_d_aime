@@ -374,14 +374,19 @@ a:hover {
 }
 
 #filtre_folio{
+  padding: 0;
   list-style: none;
   display: flex;
-  margin-bottom: -15px;
+  text-align: center;
+  flex-direction: column;
+  margin : 0 auto -15px
 }
 
 #filtre_folio li{
   border-bottom: 1px solid black;
   padding: 5px 15px;
+  width: 200px;
+  margin: auto;
   cursor: pointer;
 }
 
@@ -677,6 +682,17 @@ footer .tempsDaime {
     height: auto;
     border-radius: 22px;
   }
+
+  #filtre_folio{
+    flex-direction: row;
+    margin-left: 5px;  
+  }
+
+  #filtre_folio li{
+    text-align: start; 
+  }
+
+
 }
 
 /* ---------------------------PC----------------------- */
@@ -793,6 +809,7 @@ footer .tempsDaime {
   #background_folio {
     background-color: var(--main-color);
     width: 100%;
+    border-radius: 15px;
   }
 
   #folio_accueil {

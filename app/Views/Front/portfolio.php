@@ -1,16 +1,16 @@
 <?php ob_start(); ?>
-<main>
+<main class="container">
     
     
     <div id="background_folio">
-        <h1 class="container" id="titre_folio">Portfolio</h1>
+        <h1 id="titre_folio">Portfolio</h1>
         <ul id="filtre_folio" class="container">
             <li class="lien_filtre active" data-filter="All">All</li>
             <?php foreach($categories as $categorie){?>
                 <li class="lien_filtre filtre_li" data-filter="<?= $categorie['nom']?>"><?= $categorie['nom']?></li>
             <?php }?>
         </ul>
-        <div id="folio_accueil" class="container">
+        <div id="folio_accueil">
             
             <?php foreach($portfolio as $folio){?>
                 <div class="filtre_image" data-filter="<?= $folio['nom']?>">
