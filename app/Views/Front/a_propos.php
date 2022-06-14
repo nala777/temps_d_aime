@@ -11,7 +11,7 @@
                     <p><?= ($propos['texte'])?></p>
                 </div>
             </div>
-            <div class="tiret"><img src="app/public/Front/img/SVG/line.svg"></div>
+            <div class="tiret"><img src="app/public/Front/img/SVG/line.svg" alt="tiret"></div>
         <?php } ?>
     </div>
 </main>

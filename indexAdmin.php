@@ -40,7 +40,7 @@ try {
                 header('Location: index.php');
             }
 
-            if(isset($_SESSION['id'])){
+            // if(isset($_SESSION['id'])){
 
                 if ($_GET['action'] == 'dashboard') {
                     $backController->dashboard();
@@ -188,9 +188,9 @@ try {
                     $idFolio = $_GET['id'];
                     $backController->suppressionFolio($idFolio);
                 }
-            }else{
-                throw new Exception("Vous n'êtes pas administrateur");    
-            }
+            // }else{
+            //     throw new Exception("Vous n'êtes pas administrateur");    
+            // }
     }else{
         $backController->connexionAdmin();
     }

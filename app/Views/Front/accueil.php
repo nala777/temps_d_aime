@@ -34,9 +34,9 @@
         <section id="folio_accueil" class="container">
             <h2>Derniers Design</h2>
             <?php foreach($portfolio as $folio){?>
-                <article >
+                <div>
                     <img src="<?= $folio['image']?>" alt="<?= $folio['alt']?>">
-                </article>
+                </div>
             <?php }?>
         </section>
     </div>
@@ -49,7 +49,7 @@
         </div>
             <form id="contact" action="index.php?action=accueilPost" method="post">
                 <input aria-label="nom" placeholder="Votre nom" name="name" type="text" required>
-                <input aria-label="email" placeholder="Votre Email" name="mail" type="mail" required>
+                <input aria-label="email" placeholder="Votre Email" name="mail" type="email" required>
                 <input class="message_tablette" aria-label="Sujet" placeholder="Votre Sujet" name="subject" type="text" required>
                 <textarea class="message_tablette" placeholder="Votre message" name="content" required></textarea>
                 <button  name="submit" type="submit" id="contact-submit">Envoyer</button>
@@ -59,7 +59,7 @@
 
 
 </main>
-<script src="app\public\Front\js\slider_accueil.js"></script>
+<script src="app/public/Front/js/slider_accueil.js"></script>
 <?php $content = ob_get_clean(); ?>
 <?php $title = "Accueil" ?>
 

@@ -8,7 +8,7 @@
         <p>Email : <?=$mail['mail']?></p>
         <p>Titre : <?=$mail['sujet']?></p>
         <p>Contenu : <?=$mail['texte']?></p>
-        <a title="Retour aux mails"  title="Retour aux mails"   href="indexAdmin.php?action=voirMails"><i class="fa-solid fa-arrow-left-long"></i> Retour sur les mails</a>
+        <a title="Retour aux mails"   href="indexAdmin.php?action=voirMails"><i class="fa-solid fa-arrow-left-long"></i> Retour sur les mails</a>
     </div>
 </main>
 <?php $content = ob_get_clean(); ?>

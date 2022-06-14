@@ -44,6 +44,10 @@ try{
             }
         }
 
+        elseif($_GET['action'] == 'mentionsLegales'){
+            $frontController->mentionsLegales();
+        }
+
     }else{
         $frontController->accueil();
     }

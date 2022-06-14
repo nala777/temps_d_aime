@@ -6,9 +6,10 @@
 
 
 <section id="blog">
+    <h2 id="section_blog">Article Publié</h2>
         <?php foreach($articles as $article){?>
             <article class="article">
-                <img src="<?= ($article['image']) ?>" alt="<?= ($article['descriptif_image'])?>">
+                <img  src="<?= ($article['image']) ?>" alt="<?=$article['image']?>">
                 <div class="info_article article_blog">
                     <h2><?= ($article['titre']) ?></h2>
                     <p>Publié le <?= ($article['date']) ?></p>

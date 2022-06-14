@@ -11,7 +11,7 @@ body {
 p {
   font-size: 1.2em;
   font-weight: 300;
-  line-height: 20px;
+  line-height: 25px;
 }
 
 h1 {
@@ -175,28 +175,7 @@ a:hover {
   width: auto;
 }
 
-/* ----------------------------Footer------------------------ */
 
-footer {
-  text-align: center;
-  padding-bottom: 30px;
-}
-
-footer .reseaux {
-  width: 10%;
-}
-
-footer #logo_reseaux {
-  display: flex;
-  justify-content: space-around;
-  height: 60px;
-  width: auto;
-  margin-top: -28px;
-}
-
-footer .tempsDaime {
-  justify-content: center;
-}
 
 /* ----------------------A Propos----------------------- */
 
@@ -459,6 +438,11 @@ footer .tempsDaime {
   margin-bottom: 50px;
 }
 
+#section_blog{
+  text-align: center;
+  width: 100%;
+}
+
 .article {
   width: 100%;
   margin: 6px 0;
@@ -577,6 +561,40 @@ textarea {
   font-size: 1.2rem
 }
 
+
+/* -------------------------Mentions Legales */
+
+#mentions{
+  text-align: center;
+  line-height: 2.2rem;
+  margin-bottom: 50px;
+}
+
+/* ----------------------------Footer------------------------ */
+
+footer {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+footer .reseaux {
+  width: 10%;
+}
+
+footer #logo_reseaux {
+  display: flex;
+  justify-content: space-around;
+  height: 60px;
+  width: auto;
+  margin-top: -28px;
+}
+
+footer .tempsDaime {
+  justify-content: center;
+}
+
+
+
 /* ----------------------Tablette-------------------- */
 
 @media screen and (min-width: 600px) {
@@ -587,12 +605,9 @@ textarea {
 
   p {
     font-size: 1.4rem;
-    line-height: 25px;
   }
 
-  footer #logo_reseaux {
-    margin-top: -29px;
-  }
+  
 
   #a_propos_accueil h1 {
     font-size: 2em;
@@ -617,7 +632,7 @@ textarea {
     width: 100%;
   }
 
-  #folio_accueil article {
+  #folio_accueil div {
       width: 45%;
       margin: 2.5%;
   }
@@ -632,9 +647,17 @@ textarea {
     width: 49%;
   }
 
-  
+  #mentions{
+    text-align: start;
+  }
+
+  footer #logo_reseaux {
+    margin-top: -29px;
+  }
 
 }
+
+/* ----------------------Tablette XL--------------------- */
 
 @media screen and (min-width : 800px) {
 
@@ -656,6 +679,8 @@ textarea {
     border-radius: 22px;
   }
 }
+
+/* ---------------------------PC----------------------- */
 @media screen and (min-width : 1024px) {
 
   body {
@@ -776,7 +801,7 @@ textarea {
     padding-bottom: 2em;
   }
 
-  #folio_accueil article {
+  #folio_accueil div {
     width: 30%;
     margin : 1.5%
   }

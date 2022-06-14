@@ -68,4 +68,9 @@ class FrontController
         require "app/Views/Front/article.php";
     }
 
+    public function mentionsLegales()
+    {
+        require "app/Views/Front/mentions_legales.php";
+    }
+
 }

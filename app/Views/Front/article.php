@@ -8,7 +8,7 @@
             <p>Catégorie : <?= ($articleSimple['categorie']) ?></p>
             <p>Publié le <?= ($articleSimple['date']) ?></p>
             <p><?= ($articleSimple['texte']) ?></p>
-            <a href="index.php?action=blog"><i class="fa-solid fa-arrow-left-long"></i> Revenir aux articles</a>
+            <a title="Revenir aux articles" href="index.php?action=blog"><i class="fa-solid fa-arrow-left-long"></i> Revenir aux articles</a>
         </div>
         
     </div>
