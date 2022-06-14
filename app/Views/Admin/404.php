@@ -4,5 +4,5 @@
     <?= $e ?>
 </main>
 <?php $content = ob_get_clean(); ?>
-<?php $title = "Erreur" ?>
+<?php $title = "Page 404" ?>
 <?php require 'templates/template.php' ?>

@@ -26,5 +26,5 @@
     <script src='app/public/Administration/js/preview_image.js'></script>
     </main>
 <?php $content = ob_get_clean(); ?>
-<?php $title = "Portfolio Admin" ?>
+<?php $title = "Modification Admin" ?>
 <?php require 'templates/template.php' ?>

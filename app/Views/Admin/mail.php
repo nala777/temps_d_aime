@@ -12,5 +12,5 @@
     </div>
 </main>
 <?php $content = ob_get_clean(); ?>
-<?php $title = "Modification Page A Propos" ?>
+<?php $title = "Mail Admin" ?>
 <?php require 'templates/template.php' ?>
