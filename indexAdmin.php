@@ -44,7 +44,27 @@ try {
         }
 
         elseif ($_GET['action'] == 'dashboard') {
-                    $backController->dashboard();
+            $backController->dashboard();
+        }
+
+        //          Voir contact/mail
+
+        elseif ($_GET['action'] == 'voirContact') {
+            $backController->voirContact();
+        }
+
+        elseif ($_GET['action'] == 'voirMails') {
+            $backController->voirMails();
+        }
+
+        elseif ($_GET['action'] == 'voirMail') {
+            $idMail = $_GET['id'];
+            $backController->voirMail($idMail);
+        }
+
+        elseif ($_GET['action'] == 'deleteMail') {
+            $idMail = $_GET['id'];
+            $backController->deleteMail($idMail);
         }
         
         //          A PROPOS ADMIN

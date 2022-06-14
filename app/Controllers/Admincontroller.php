@@ -91,6 +91,36 @@ class AdminController
         require 'app/views/Admin/dashboard.php';
     }
 
+    public function voirContact(){
+        $contact = new \Projet\Models\ContactModel();
+        $contacts = $contact->voirContact();
+
+        require 'app/Views/Admin/contact.php';
+    }
+
+    public function voirMails(){
+        $contact = new \Projet\Models\ContactModel();
+        $mails = $contact->voirMails();
+
+        require 'app/Views/Admin/mails.php';
+    }
+
+    public function voirMail($idMail){
+        $contact = new \Projet\Models\ContactModel();
+        $mail = $contact->voirMail($idMail);
+
+        require 'app/Views/Admin/mail.php';
+    }
+
+    public function deleteMail($idMail){
+
+        $contact = new \Projet\Models\ContactModel();
+        $mails = $contact->deleteMail($idMail);
+        $mails = $contact->voirMails();
+
+        require 'app/Views/Admin/mails.php';
+    }
+
     //                                         A Propos
 
     public function a_propos_admin(){
