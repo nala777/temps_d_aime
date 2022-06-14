@@ -16,7 +16,7 @@
             <div class="image_folio">
                 <img src="<?= $folio['image']?>" alt <?= $folio['alt']?>>
                 <h2>Catégorie - <?= $folio['nom']?></h2>
-                <a class="button folio_button" href="indexAdmin.php?action=suppr_folio&id=<?=($folio['id'])?>">Supprimer</a>
+                <a title="Supprimer du folio"  class="button folio_button" href="indexAdmin.php?action=suppr_folio&id=<?=($folio['id'])?>">Supprimer</a>
             </div>
         <?php }?>
     </div>

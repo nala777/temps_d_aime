@@ -7,14 +7,14 @@
         <div class="stat">
             <div class="stat_info">
                 <h2><?= $countContact['countContact'] ?> Contacts</h2>
-                <p><a href="indexAdmin.php?action=voirContact">Voir tout les contact</a></p>
+                <p><a title="Voir contacts"  href="indexAdmin.php?action=voirContact">Voir tout les contact</a></p>
             </div>
             <img src="app/public/Administration/img/contact.png">
         </div>
         <div class="stat">
             <div class="stat_info">
                 <h2><?= $countMail['countMail'] ?> Mails Reçu</h2>
-                <a href="indexAdmin.php?action=voirMails">Voir tout les mails</a>
+                <a title="Voir les mails"  href="indexAdmin.php?action=voirMails">Voir tout les mails</a>
             </div>
             <img src="app/public/Administration/img/mail.png">
         </div>

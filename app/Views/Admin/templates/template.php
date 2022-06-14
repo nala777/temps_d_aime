@@ -19,26 +19,22 @@
                         <span></span>
                         <span></span>
                         <ul id="menu">
-                            <a href="indexAdmin.php?action=dashboard"><li>Home</li></a>
-                            <li>Modification Page
-                                    <a href="indexAdmin.php?action=a_propos_admin"><li>A Propos</li></a>
-                                    <a href="indexAdmin.php?action=portfolio_admin"><li>Portfolio</li></a>
-                                    <a href="indexAdmin.php?action=blog_admin"><li>Blog</li></a>
-
-                            </li>
-                            <a href="index.php"><li>Retour sur le site</li></a>
-                            <a href="indexAdmin.php?action=deconnexion"><li>Deconnexion</li></a>
+                            <a title="dashboard" href="indexAdmin.php?action=dashboard"><li>Home</li></a>
+                            <a title="a propos admin"  href="indexAdmin.php?action=a_propos_admin"><li>A Propos</a></li>
+                            <a title="portfolio admin" href="indexAdmin.php?action=portfolio_admin"><li>Portfolio</li></a>
+                            <a title="blog admin" href="indexAdmin.php?action=blog_admin"><li>Blog</li></a>
+                            <a title="Retourner sur le site" href="index.php"><li>Retour sur le site</li></a>
+                            <a title="deconnexion" href="indexAdmin.php?action=deconnexion"><li>Deconnexion</li></a>
                         </ul>
                         
                     </div>
                     <ul id="menu_desktop">
-                        <a href="indexAdmin.php?action=dashboard"><li>Home</li></a>
-                        <a href="indexAdmin.php?action=a_propos_admin"><li>A Propos</li></a>
-                        <a href="indexAdmin.php?action=portfolio_admin"><li>Portfolio</li></a>
-                        <a href="indexAdmin.php?action=blog_admin"><li>Blog</li></a>
-                        <a href="indexAdmin.php?action=compte_admin"><li>Mon Compte</li></a>
-                        <a href="index.php"><li>Retour sur le site</li></a>
-                        <a href="indexAdmin.php?action=deconnexion"><li>Deconnexion</li></a>
+                        <a title="dashboard" href="indexAdmin.php?action=dashboard"><li>Home</li></a>
+                        <a title="a propos admin" href="indexAdmin.php?action=a_propos_admin"><li>A Propos</li></a>
+                        <a title="portfolio admin" href="indexAdmin.php?action=portfolio_admin"><li>Portfolio</li></a>
+                        <a title="blog admin" href="indexAdmin.php?action=blog_admin"><li>Blog</li></a>
+                        <a title="" href="index.php"><li>Retour sur le site</li></a>
+                        <a title="" href="indexAdmin.php?action=deconnexion"><li>Deconnexion</li></a>
                     </ul>
                 </nav>
                 

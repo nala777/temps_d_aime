@@ -54,11 +54,12 @@ class AdminController
             echo 'mail non existant';
         }
     }
+
+    
     
     // Traitement de fichiers images
 
     public function upload($file){
-        var_dump($file);die;
         $tmpName = $file['tmp_name'];
         $name = $file['name'];
         $size = $file['size'];
@@ -274,3 +275,4 @@ class AdminController
         require "app/Views/Admin/portfolio_admin.php";   
     }
 }
+

@@ -20,8 +20,8 @@
                     <td><?= $mail['sujet'] ?></td>                
                     <td><?= substr($mail['texte'],0 ,20). ' ...' ?></td>
                     <td class="icones">
-                        <a href="indexAdmin.php?action=voirMail&id=<?= $mail['id']?>"><i class="fa-regular fa-eye"></i></a>
-                        <a href="indexAdmin.php?action=deleteMail&id=<?= $mail['id']?>"><i class="fa-solid fa-trash-can"></i></a>
+                        <a title="voir le mail"  href="indexAdmin.php?action=voirMail&id=<?= $mail['id']?>"><i class="fa-regular fa-eye"></i></a>
+                        <a title="supprimer le mail"  href="indexAdmin.php?action=deleteMail&id=<?= $mail['id']?>"><i class="fa-solid fa-trash-can"></i></a>
                     </td>                
                 </tr>
             <?php }?>

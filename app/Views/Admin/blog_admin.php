@@ -2,7 +2,7 @@
 <main class="container">
 
 <h2>Ajout d'un nouvel article</h2>
-<a class="button" id="blog_button" href ="indexAdmin.php?action=ajout_blog">Ajouter</a>
+<a title="ajout nouvelle article"  class="button" id="blog_button" href ="indexAdmin.php?action=ajout_blog">Ajouter</a>
 
 
 <section id="blog">
@@ -15,8 +15,8 @@
                     <p>Catégorie : <?= ($article['categorie']) ?></p>  
                 </div>
                 <div class="action_bouton">
-                    <a href="indexAdmin.php?action=modif_article&id=<?=($article['id'])?>">Modifier</a>
-                    <a href="indexAdmin.php?action=suppr_article&id=<?=($article['id'])?>">Supprimer</a>
+                    <a title="modifier l'article"  href="indexAdmin.php?action=modif_article&id=<?=($article['id'])?>">Modifier</a>
+                    <a title="supprimer l'article"  href="indexAdmin.php?action=suppr_article&id=<?=($article['id'])?>">Supprimer</a>
                 </div>
             </article>
         

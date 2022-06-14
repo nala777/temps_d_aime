@@ -7,7 +7,7 @@
                 <h2><?= ($propos['titre']) ?></h2>
                 <p><?= ($propos['texte'])?></p>
             </div>
-            <a href="indexAdmin.php?action=modif_propos&id=<?=($propos['id'])?>">Modifier</a>
+            <a title="modifier bloc" href="indexAdmin.php?action=modif_propos&id=<?=($propos['id'])?>" >Modifier</a>
         </div>
     <?php }?>
 </main>
