@@ -2,7 +2,10 @@
 <main class="container">
     <h1>Modification Portfolio</h1>
     <form class="formulaire" action="indexAdmin.php?action=ajout_folio" method="POST" enctype="multipart/form-data">
-        <input aria-label="image" type="file" name="file" required>
+        <input aria-label="image" type="file" name="file" id="upload_image" required>
+        <div id="preview">
+            <img id="previewImage" src="#" alt="Preview Image">
+        </div>
         <input aria-label="descriptif_image" placeholder="Descriptif image" name="descriptif" type="text" required >
         <select name="categories">
             <?php foreach($categories as $categorie) {?>
@@ -20,6 +23,7 @@
             </div>
         <?php }?>
     </div>
+    <script src='app/public/Administration/js/preview_image.js'></script>
     </main>
 <?php $content = ob_get_clean(); ?>
 <?php $title = "Portfolio Admin" ?>

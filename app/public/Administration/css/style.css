@@ -438,6 +438,17 @@ nav a {
   border: none;
 }
 
+#preview{
+  width: 90%;
+  margin: 10px auto;
+  display: none;
+}
+
+#previewImage{
+  width: 100%;
+  height: auto;
+}
+
 #categorie{
   display: flex;
   align-items: center;
@@ -638,6 +649,17 @@ nav a {
 
   .image_folio {
     width: 48%;
+  }
+
+  #preview{
+    width: 400px;
+    margin: 10px auto;
+    display: none;
+  }
+  
+  #previewImage{
+    width: 100%;
+    height: auto;
   }
 
 }
