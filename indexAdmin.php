@@ -44,7 +44,7 @@ try {
             }
 
             // vérification d'une connexion pour avoir accès au côté admin
-            if(isset($_SESSION['id'])){
+            elseif(isset($_SESSION['id'])){
 
                     // affichage dashboard
                     if ($_GET['action'] == 'dashboard') {
@@ -232,13 +232,13 @@ try {
                         $idFolio = $_GET['id'];
                         $backController->suppressionFolio($idFolio);
                     }
-
-        
-                
+                    else{
+                        throw new Exception();
+                    }    
             }else{
                 throw new Exception("Vous n'êtes pas administrateur");    
             }
-            
+           
     }else{
         // page connexion admin
         $backController->connexionAdmin();

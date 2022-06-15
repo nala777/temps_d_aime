@@ -352,9 +352,8 @@ nav a {
   text-align: center;
 }
 
-.icones {
-  display: flex;
-  justify-content: space-around
+.icones a{
+  margin: auto;
 }
 
 .icones .fa-regular , .icones .fa-solid{
@@ -364,6 +363,10 @@ nav a {
 #mail p{
   font-size: 1.6rem;
   line-height: 1.6rem;
+}
+
+.mobile_mail{
+  display: none;
 }
 
 /* ----------------FORMULAIRE ADMIN pour update et create (blog/portfolio...) ------------------------*/
@@ -726,6 +729,11 @@ nav a {
 
   .stat {
     width: 49%
+  }
+  /* mails */
+
+  .mobile_mail{
+    display: block;
   }
 
   /* page a propos */
