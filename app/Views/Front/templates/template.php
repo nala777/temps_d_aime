@@ -21,18 +21,18 @@
                     <span></span>
                     <ul id="menu">
                         <li><a title="Page Home"  href="index.php">Home</a></li>
-                        <li><a title="Page A Propos"  href="index.php?action=aPropos">A Propos</a></li>        
-                        <li><a title="Page Portfolio"  href="index.php?action=portfolio">Portfolio</a></li>
-                        <li><a title="Page Blog"  href="index.php?action=blog">Blog</a></li>
+                        <li><a title="Page A Propos"  href="aPropos">A Propos</a></li>        
+                        <li><a title="Page Portfolio"  href="portfolio">Portfolio</a></li>
+                        <li><a title="Page Blog"  href="blog">Blog</a></li>
                         <li><a title="Page Connexion"  href="indexAdmin.php">Connexion</a></li>
                     </ul>
                 </div>
                 <ul id="menu_desktop">
-                    <li><a title="Page Home"  href="index.php">Home</a></li>
-                    <li><a title="Page A Propos"  href="index.php?action=aPropos">A Propos</a></li>        
-                    <li><a title="Page Portfolio"  href="index.php?action=portfolio">Portfolio</a></li>
-                    <li><a title="Page Blog"  href="index.php?action=blog">Blog</a></li>
-                    <li><a title="Page Connexion"  href="indexAdmin.php">Connexion</a></li>
+                <li><a title="Page Home"  href="index.php">Home</a></li>
+                        <li><a title="Page A Propos"  href="aPropos">A Propos</a></li>        
+                        <li><a title="Page Portfolio"  href="portfolio">Portfolio</a></li>
+                        <li><a title="Page Blog"  href="blog">Blog</a></li>
+                        <li><a title="Page Connexion"  href="indexAdmin.php">Connexion</a></li>
                 </ul>
             </nav>
             <div class="tempsDaime">

@@ -48,6 +48,10 @@ try{
             $frontController->mentionsLegales();
         }
 
+        else{
+            throw new Exception();
+        }
+
     }else{
         $frontController->accueil();
     }

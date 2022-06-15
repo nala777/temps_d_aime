@@ -40,191 +40,195 @@ try {
                 header('Location: index.php');
             }
 
-            // if(isset($_SESSION['id'])){
+            if(isset($_SESSION['id'])){
 
-                if ($_GET['action'] == 'dashboard') {
-                    $backController->dashboard();
-                }
-
-                //          Voir contact/mail
-
-                elseif ($_GET['action'] == 'voirContact') {
-                    $backController->voirContact();
-                }
-
-                elseif ($_GET['action'] == 'voirMails') {
-                    $backController->voirMails();
-                }
-
-                elseif ($_GET['action'] == 'voirMail') {
-                    $idMail = $_GET['id'];
-                    $backController->voirMail($idMail);
-                }
-
-                elseif ($_GET['action'] == 'deleteMail') {
-                    $idMail = $_GET['id'];
-                    $backController->deleteMail($idMail);
-                }
-                
-                //          A PROPOS ADMIN
-
-                elseif($_GET['action'] == 'a_propos_admin'){
-                    $backController->a_propos_admin();
-                }
-
-                elseif($_GET['action'] == 'modif_propos'){
-
-                    $idPropos = $_GET['id'];
-                    $backController->a_propos_modif($idPropos);
-
-                }
-
-                elseif($_GET['action'] == 'updatePropos'){
-
-                    $idArticle = $_GET['id'];
-                    $descriptif = htmlspecialchars($_POST['descriptif']);
-                    $titre = htmlspecialchars($_POST['titre']);
-                    $texte = htmlspecialchars($_POST['texte']);
-                    
-                    if(!empty($file) && (!empty($descriptif) && (!empty($titre) && (!empty($texte))))){
-                        $file = $_FILES['file'];
-                        $path=$backController->upload($file);
-                        $data = [
-                            "id" => $idArticle,
-                            "image" => $path,
-                            "descriptif" => $descriptif,
-                            "titre" => $titre,
-                            "texte" => $texte
-                        ];
-                        $backController->updateProposImg($data); 
-
-                    }elseif((!empty($descriptif) && (!empty($titre) && (!empty($texte))))) {
-                        $data = [
-                            "id" => $idArticle,
-                            "descriptif" => $descriptif,
-                            "titre" => $titre,
-                            "texte" => $texte
-                        ];
-                        $backController->updatePropos($data);
-
-                    
-                    }else{
-                        throw new Exception('Tous les champs ne sont pas remplis');
+                    if ($_GET['action'] == 'dashboard') {
+                        $backController->dashboard();
                     }
-                }
 
-                //          SERVICES ADMIN
+                    //          Voir contact/mail
 
-                elseif($_GET['action'] == 'services_admin'){
-                    $backController->services_admin();
-                }
+                    elseif ($_GET['action'] == 'voirContact') {
+                        $backController->voirContact();
+                    }
 
-                //          BLOG ADMIN
+                    elseif ($_GET['action'] == 'voirMails') {
+                        $backController->voirMails();
+                    }
 
+                    elseif ($_GET['action'] == 'voirMail') {
+                        $idMail = $_GET['id'];
+                        $backController->voirMail($idMail);
+                    }
 
-                elseif($_GET['action'] == 'blog_admin'){
-                    $backController->blog_admin();
-                }
-
-                elseif($_GET['action'] == 'ajout_blog'){
-                    $backController->ajout_blog();
-                }
-
-                elseif($_GET['action'] == 'ajout_categorie'){
-                    $categorie = htmlspecialchars($_POST['categorie']);
-                    $backController->ajout_categorie($categorie);
-                    var_dump($categorie);die;
-                }
-
-                elseif($_GET['action'] == "upload_article"){
-                    $file = $_FILES['file'];
-                    $descriptif = htmlspecialchars($_POST['descriptif']);
-                    $titre = htmlspecialchars($_POST['titre']);
-                    $texte = htmlspecialchars($_POST['texte']);
-                    $categories = $_POST['categories'];
-                    if (!empty($file) && (!empty($descriptif) && (!empty($titre) && (!empty($texte) && (!empty($categories)))))) {
-                        $path=$backController->upload($file);
-                        $data = [
-                            "id" => $idArticle,
-                            "image" => $path,
-                            "descriptif" => $descriptif,
-                            "categorie" => $categories,
-                            "titre" => $titre,
-                            "texte" => $texte
-                        ];
-                        $backController->upload_article($data);
-                    }else{
-                        throw new Exception('Tous les champs ne sont pas remplis');
+                    elseif ($_GET['action'] == 'deleteMail') {
+                        $idMail = $_GET['id'];
+                        $backController->deleteMail($idMail);
                     }
                     
-                }elseif($_GET['action'] == 'modif_article'){
-                    $idArticle = $_GET['id'];
-                    $backController->modificationArticle($idArticle);
-                }
-                
-                elseif($_GET['action'] == 'updateArticle'){
-                    $idArticle = $_GET['id']; 
-                    $descriptif = htmlspecialchars($_POST['descriptif']);
-                    $titre = htmlspecialchars($_POST['titre']);
-                    $texte = htmlspecialchars($_POST['texte']);
-                    $categories = $_POST['categories'];
-                    
-                    if(!empty($file) && (!empty($descriptif) && (!empty($titre) && (!empty($texte) && (!empty($categories)))))){
-                        $file = $_FILES['file'];
-                        $path=$backController->upload($file);
-                        $data = [
-                            "id" => $idArticle,
-                            "image" => $path,
-                            "descriptif" => $descriptif,
-                            "titre" => $titre,
-                            "categorie" => $categories,
-                            "texte" => $texte
-                        ];
-                        $backController->updateArticleImg($data);
+                    //          A PROPOS ADMIN
+
+                    elseif($_GET['action'] == 'a_propos_admin'){
+                        $backController->a_propos_admin();
+                    }
+
+                    elseif($_GET['action'] == 'modif_propos'){
+
+                        $idPropos = $_GET['id'];
+                        $backController->a_propos_modif($idPropos);
+
+                    }
+
+                    elseif($_GET['action'] == 'updatePropos'){
+
+                        $idArticle = $_GET['id'];
+                        $descriptif = htmlspecialchars($_POST['descriptif']);
+                        $titre = htmlspecialchars($_POST['titre']);
+                        $texte = htmlspecialchars($_POST['texte']);
                         
-                    }elseif (!empty($descriptif) && (!empty($titre) && (!empty($texte) && (!empty($categories))))) {
-                        $data = [
-                            "id" => $idArticle,
-                            "descriptif" => $descriptif,
-                            "titre" => $titre,
-                            "categorie" => $categories,
-                            "texte" => $texte
-                        ];
-                        $backController->updateArticle($data);
+                        if(!empty($file) && (!empty($descriptif) && (!empty($titre) && (!empty($texte))))){
+                            $file = $_FILES['file'];
+                            $path=$backController->upload($file);
+                            $data = [
+                                "id" => $idArticle,
+                                "image" => $path,
+                                "descriptif" => $descriptif,
+                                "titre" => $titre,
+                                "texte" => $texte
+                            ];
+                            $backController->updateProposImg($data); 
 
-                    }else{
-                        throw new Exception('Tous les champs ne sont pas remplis');
+                        }elseif((!empty($descriptif) && (!empty($titre) && (!empty($texte))))) {
+                            $data = [
+                                "id" => $idArticle,
+                                "descriptif" => $descriptif,
+                                "titre" => $titre,
+                                "texte" => $texte
+                            ];
+                            $backController->updatePropos($data);
+
+                        
+                        }else{
+                            throw new Exception('Tous les champs ne sont pas remplis');
+                        }
                     }
-                }
 
-                elseif($_GET['action'] == 'suppr_article'){
-                    $idArticle = $_GET['id'];
-                    $backController->suppressionArticle($idArticle);
-                }
+                    //          SERVICES ADMIN
 
-                elseif($_GET['action'] == 'portfolio_admin'){
-                    $backController->afficheFolio();
-                }
-
-                elseif($_GET['action'] == 'ajout_folio'){
-                    $file = $_FILES['file'];
-                    $descriptif = htmlspecialchars($_POST['descriptif']);
-                    $categories = $_POST['categories'];
-                    if (!empty($file) && (!empty($descriptif) && (!empty($categories)))) {
-                        $path = $backController->upload($file);
-                        $backController->ajoutFolio($path,$descriptif,$categories);
-                    }else{
-                        throw new Exception('Tous les champs ne sont pas remplis');
+                    elseif($_GET['action'] == 'services_admin'){
+                        $backController->services_admin();
                     }
-                }
 
-                elseif($_GET['action'] == 'suppr_folio'){
-                    $idFolio = $_GET['id'];
-                    $backController->suppressionFolio($idFolio);
-                }
-            // }else{
-            //     throw new Exception("Vous n'êtes pas administrateur");    
-            // }
+                    //          BLOG ADMIN
+
+
+                    elseif($_GET['action'] == 'blog_admin'){
+                        $backController->blog_admin();
+                    }
+
+                    elseif($_GET['action'] == 'ajout_blog'){
+                        $backController->ajout_blog();
+                    }
+
+                    elseif($_GET['action'] == 'ajout_categorie'){
+                        $categorie = htmlspecialchars($_POST['categorie']);
+                        $backController->ajout_categorie($categorie);
+                        var_dump($categorie);die;
+                    }
+
+                    elseif($_GET['action'] == "upload_article"){
+                        $file = $_FILES['file'];
+                        $descriptif = htmlspecialchars($_POST['descriptif']);
+                        $titre = htmlspecialchars($_POST['titre']);
+                        $texte = htmlspecialchars($_POST['texte']);
+                        $categories = $_POST['categories'];
+                        if (!empty($file) && (!empty($descriptif) && (!empty($titre) && (!empty($texte) && (!empty($categories)))))) {
+                            $path=$backController->upload($file);
+                            $data = [
+                                "id" => $idArticle,
+                                "image" => $path,
+                                "descriptif" => $descriptif,
+                                "categorie" => $categories,
+                                "titre" => $titre,
+                                "texte" => $texte
+                            ];
+                            $backController->upload_article($data);
+                        }else{
+                            throw new Exception('Tous les champs ne sont pas remplis');
+                        }
+                        
+                    }elseif($_GET['action'] == 'modif_article'){
+                        $idArticle = $_GET['id'];
+                        $backController->modificationArticle($idArticle);
+                    }
+                    
+                    elseif($_GET['action'] == 'updateArticle'){
+                        $idArticle = $_GET['id']; 
+                        $descriptif = htmlspecialchars($_POST['descriptif']);
+                        $titre = htmlspecialchars($_POST['titre']);
+                        $texte = htmlspecialchars($_POST['texte']);
+                        $categories = $_POST['categories'];
+                        
+                        if(!empty($file) && (!empty($descriptif) && (!empty($titre) && (!empty($texte) && (!empty($categories)))))){
+                            $file = $_FILES['file'];
+                            $path=$backController->upload($file);
+                            $data = [
+                                "id" => $idArticle,
+                                "image" => $path,
+                                "descriptif" => $descriptif,
+                                "titre" => $titre,
+                                "categorie" => $categories,
+                                "texte" => $texte
+                            ];
+                            $backController->updateArticleImg($data);
+                            
+                        }elseif (!empty($descriptif) && (!empty($titre) && (!empty($texte) && (!empty($categories))))) {
+                            $data = [
+                                "id" => $idArticle,
+                                "descriptif" => $descriptif,
+                                "titre" => $titre,
+                                "categorie" => $categories,
+                                "texte" => $texte
+                            ];
+                            $backController->updateArticle($data);
+
+                        }else{
+                            throw new Exception('Tous les champs ne sont pas remplis');
+                        }
+                    }
+
+                    elseif($_GET['action'] == 'suppr_article'){
+                        $idArticle = $_GET['id'];
+                        $backController->suppressionArticle($idArticle);
+                    }
+
+                    elseif($_GET['action'] == 'portfolio_admin'){
+                        $backController->afficheFolio();
+                    }
+
+                    elseif($_GET['action'] == 'ajout_folio'){
+                        $file = $_FILES['file'];
+                        $descriptif = htmlspecialchars($_POST['descriptif']);
+                        $categories = $_POST['categories'];
+                        if (!empty($file) && (!empty($descriptif) && (!empty($categories)))) {
+                            $path = $backController->upload($file);
+                            $backController->ajoutFolio($path,$descriptif,$categories);
+                        }else{
+                            throw new Exception('Tous les champs ne sont pas remplis');
+                        }
+                    }
+
+                    elseif($_GET['action'] == 'suppr_folio'){
+                        $idFolio = $_GET['id'];
+                        $backController->suppressionFolio($idFolio);
+                    }
+
+        
+                
+            }else{
+                throw new Exception("Vous n'êtes pas administrateur");    
+            }
+            
     }else{
         $backController->connexionAdmin();
     }

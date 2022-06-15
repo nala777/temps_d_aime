@@ -384,8 +384,8 @@ a:hover {
 
 #filtre_folio li{
   border-bottom: 1px solid black;
-  padding: 5px 15px;
-  width: 200px;
+  padding: 5px 0;
+  width: 150px;
   margin: auto;
   cursor: pointer;
 }
@@ -568,14 +568,14 @@ textarea {
 /* -------------------------Page 404------------------------ */
 
 #page-404 {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   color: white;
-  background: url('/app/public/Front/img/404.jpg') no-repeat center;
+  background: url('/app/public/Administration/img/404.jpg') no-repeat center;
 }
 
 #page-404 h1 {
@@ -759,7 +759,9 @@ footer .tempsDaime {
   }
 
   #filtre_folio li{
-    text-align: start; 
+    text-align: start;
+    padding-left: 10px; 
+    margin: 0;
   }
 
 
@@ -920,6 +922,12 @@ footer .tempsDaime {
 
   .article{
     width: 32%;
+  }
+
+  /* 404 */
+
+  #body_404{
+    max-width: 100%;
   }
 
   footer #logo_reseaux {

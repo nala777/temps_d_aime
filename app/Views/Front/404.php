@@ -8,7 +8,7 @@
         <link href="app/public/Front/css/style.css" rel="stylesheet" type="text/css">
         <title>Page 404</title>
     </head>
-    <body>
+    <body id="body_404">
         <section id="page-404">
         <div>
             <h1>Erreur 404 - Page introuvable</h1>
