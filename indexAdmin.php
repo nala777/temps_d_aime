@@ -10,7 +10,7 @@ $dotenv->load();
 try {
 
     $backController = new \Projet\Controllers\AdminController();//objet controler
-
+    $erreur = [];
     
         if (isset($_GET['action'])) {
             // création admin
@@ -89,6 +89,7 @@ try {
                     elseif($_GET['action'] == 'updatePropos'){
 
                         $idArticle = $_GET['id'];
+                        
                         $descriptif = htmlspecialchars($_POST['descriptif']);
                         $titre = htmlspecialchars($_POST['titre']);
                         $texte = htmlspecialchars($_POST['texte']);
@@ -236,7 +237,8 @@ try {
                         throw new Exception();
                     }    
             }else{
-                throw new Exception("Vous n'êtes pas administrateur");    
+                $erreur[] = "Vous n'êtes pas connecté";
+                require 'app/Views/Admin/connexion_admin.php'; 
             }
            
     }else{

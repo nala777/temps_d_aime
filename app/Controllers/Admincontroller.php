@@ -27,7 +27,7 @@ class AdminController
         $article = new \Projet\Models\BlogModel();
         
         
-        
+        $erreur = [];
         $connexAdm = $userManager->recupMdp($mail, $mdp);
 
         $resultat = $connexAdm->fetch();
@@ -50,11 +50,15 @@ class AdminController
             
                 require 'app/views/Admin/dashboard.php';
             }else{
-            echo 'Vos identifiants sont incorrect';
+                $erreur[] = "Vos identifiants sont incorrect";
+                require 'app/Views/Admin/connexion_admin.php';
+                return $erreur;
             //require('views/backend/erreur.php');
             }
         }else{
-            echo 'mail non existant';
+            $erreur[] = "Vos identifiants sont incorrect";
+            require 'app/Views/Admin/connexion_admin.php';
+            return $erreur;
         }
     }
 
@@ -138,7 +142,11 @@ class AdminController
     public function a_propos_modif($idPropos){
         $propos = new \Projet\Models\AProposModel();
         $modifP = $propos->propos($idPropos);
-        require "app/Views/Admin/modif_a_propos.php";
+        if(isset($modifP['id'])){
+            require "app/Views/Admin/modif_a_propos.php";
+        }else{
+            throw new Exception();
+        }
     }
     // envoie formulaire update un élément de a propos sans image
     public function updatePropos($data){

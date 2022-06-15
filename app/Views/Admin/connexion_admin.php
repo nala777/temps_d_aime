@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="app/public/Administration/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <link href="app/public/Administration/css/style.css" rel="stylesheet" type="text/css">
         <title>Connexion</title>
     </head>
@@ -12,6 +13,13 @@
         <main class="container">
             <section id="connexion_admin">
                 <h1>Connexion Administrateur</h1>
+                <?php if (isset($erreur)):
+                    if($erreur): 
+                        foreach($erreur as $e):?>
+                            <p class="msg-error"><?= $e ?></p>
+                        <?php endforeach;
+                    endif;
+                endif;?>
                 <!-- form connexion admin -->
                 <form action="indexAdmin.php?action=connexionAdmin" method="post">
                     <div>
