@@ -10,28 +10,29 @@ try{
     $frontController = new \Projet\Controllers\FrontController();
 
     if(isset($_GET['action'])){
+        // affichage page a propos
 
         if($_GET['action'] == 'aPropos'){
             $frontController->aPropos();
         }
 
-        elseif($_GET['action'] == 'services'){
-            $frontController->services();
-        }
-
+        // affichage portfolio
         elseif($_GET['action'] == 'portfolio'){
             $frontController->portfolio();
         }
 
+        // affichage blog
         elseif($_GET['action'] == 'blog'){
             $frontController->blog();
         }
 
+        // affichage d'un article
         elseif($_GET['action'] == 'article'){
             $idArticle = $_GET['id'];
             $frontController->article($idArticle);
         }
         
+        // récupération des données pour envoie formulaire contact
         elseif($_GET['action'] == 'accueilPost'){
             $name = htmlspecialchars($_POST['name']);
             $mail = htmlspecialchars($_POST['mail']);
@@ -44,6 +45,7 @@ try{
             }
         }
 
+        // affichage mentions légales
         elseif($_GET['action'] == 'mentionsLegales'){
             $frontController->mentionsLegales();
         }

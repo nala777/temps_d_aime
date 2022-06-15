@@ -2,6 +2,7 @@
 <main>
     <h1 id=titre_propos>A propos de moi</h1>
     <div id="bloc_propos">
+        <!-- boucle affichage propos -->
         <?php foreach($allPropos as $propos){ ?>
             <div class="a_propos">
                 <img class="img_propos" src="<?= ($propos['image']) ?>" alt="<?= ($propos['descriptif_image'])?>">

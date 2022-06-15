@@ -13,6 +13,7 @@
             </tr>
         </thead>
         <tbody>
+            <!-- boucle affichage mails-->
             <?php foreach($mails as $mail){ ?>
                 <tr>
                     <td><?= $mail['nom'] ?></td>

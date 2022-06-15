@@ -1,6 +1,7 @@
 <?php ob_start(); ?>
 <main class="container">
     <h1 id="titre_form">Ajout d'un article</h1>
+    <!-- form ajout un article -->
     <form class="formulaire" action="indexAdmin.php?action=upload_article" method="POST" enctype="multipart/form-data">
         <input aria-label="image" type="file" name="file" id="upload_image" required>
         <div id="preview">
@@ -16,6 +17,7 @@
         <textarea placeholder="Texte Article" name="texte" required></textarea>
         <button type="submit">Ajouter article</button>
     </form>
+    <!-- ajout d'une catégorie -->
     <form class="formulaire" id="categorie" action ="indexAdmin.php?action=ajout_categorie" method="POST" enctype="multipart/form-data">
         <input aria-label="categorie" id="input_categorie" placeholder="Catégorie" name="categorie" type="text" required>
         <button id="button_categorie" type="submit">Ajouter une catégorie</button>

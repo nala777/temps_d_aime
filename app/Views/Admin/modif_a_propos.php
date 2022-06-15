@@ -1,6 +1,7 @@
 <?php ob_start(); ?>
 <main class="container">
     <h1>Modification partie à propos</h1>
+    <!-- form update a propos -->
     <form class="formulaire" action="indexAdmin.php?action=updatePropos&id=<?= $modifP['id'] ;?>" method="POST" enctype="multipart/form-data">
         <div id="preview">
             <img id="previewImage" src="#" alt="Preview Image">

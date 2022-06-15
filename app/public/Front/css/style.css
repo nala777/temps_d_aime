@@ -1,3 +1,5 @@
+/* -----------------------PARAMETRES GENERAUX------------------ */
+
 * {
   font-family: 'Roboto', sans-serif;
 }
@@ -78,16 +80,11 @@ a:hover {
   cursor: pointer;
 
   opacity: 0;
-  /* hide this */
   z-index: 2;
-  /* and place it over the hamburger */
 
   -webkit-touch-callout: none;
 }
 
-/*
- * Just a quick hamburger
- */
 #menuToggle span {
   display: block;
   width: 33px;
@@ -682,7 +679,7 @@ footer .tempsDaime {
   }
 
   
-
+/* Accueil */
   #a_propos_accueil h1 {
     font-size: 2em;
     font-weight: 400;
@@ -711,6 +708,8 @@ footer .tempsDaime {
       margin: 2.5%;
   }
 
+  /* blog */
+
   #blog {
     display: flex;
     flex-wrap: wrap;
@@ -721,6 +720,7 @@ footer .tempsDaime {
     width: 49%;
   }
 
+  /* mentions-légales */
   #mentions{
     text-align: start;
   }
@@ -734,7 +734,7 @@ footer .tempsDaime {
 /* ----------------------Tablette XL--------------------- */
 
 @media screen and (min-width : 800px) {
-
+  /* Article seule */
   #oneArticle{
     width: 100%;
     display: flex;
@@ -753,6 +753,7 @@ footer .tempsDaime {
     border-radius: 22px;
   }
 
+  /* catégories portfolio */
   #filtre_folio{
     flex-direction: row;
     margin-left: 5px;  
@@ -775,6 +776,8 @@ footer .tempsDaime {
     margin: auto;
   }
 
+  /* --------------header--------- */
+  /* menu */
   #menuToggle {
     display: none;
   }
@@ -788,6 +791,32 @@ footer .tempsDaime {
   #menu_desktop li {
     margin-right: 20px;
     ;
+  }
+  /* accueil */
+  #container_formulaire_accueil {
+    background-color: white;
+  }
+
+  #formulaire_desktop {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #texte_formulaire {
+    text-align: start;
+    width: 35%;
+  }
+
+  #container_formulaire_accueil h2 {
+    margin-top: 0;
+  }
+
+  #container_formulaire_accueil form {
+    width: 50%;
+  }
+
+  #container_formulaire_accueil form input {
+    width: 100%;
   }
   /*------------------------- A propos -------------------*/
   /* Accueil */
@@ -892,33 +921,7 @@ footer .tempsDaime {
   #folio_accueil div {
     width: 30%;
     margin : 1.5%
-  }
-
-  #container_formulaire_accueil {
-    background-color: white;
-  }
-
-  #formulaire_desktop {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  #texte_formulaire {
-    text-align: start;
-    width: 35%;
-  }
-
-  #container_formulaire_accueil h2 {
-    margin-top: 0;
-  }
-
-  #container_formulaire_accueil form {
-    width: 50%;
-  }
-
-  #container_formulaire_accueil form input {
-    width: 100%;
-  }
+  } 
 
   .article{
     width: 32%;
@@ -930,6 +933,7 @@ footer .tempsDaime {
     max-width: 100%;
   }
 
+  /* Footer */
   footer #logo_reseaux {
     margin-top: 20px;
     height: 60px;

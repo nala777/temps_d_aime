@@ -4,6 +4,7 @@ namespace Projet\Models;
 
 class AdminModel extends TempsDaimeOrm
 {
+    // création admin
     public function creatAdmin($firstname,$lastname,$mdp,$mail)
     {
         $bdd = $this->connect();
@@ -12,6 +13,7 @@ class AdminModel extends TempsDaimeOrm
         return $user;
     }
 
+    // recupération du mot de passe en lien avec le mail
     public function recupMdp($mail, $mdp)
     {
         $bdd = $this->connect();

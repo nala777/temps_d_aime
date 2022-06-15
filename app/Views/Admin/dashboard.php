@@ -21,6 +21,7 @@
     </div>
     <section id="blog">
         <h2 id="section_blog">Derniers Articles</h2>
+        <!-- boucle affichage derniers article -->
         <?php foreach($derniersArticles as $article){ ?>
             <article class="article">
                 <img src="<?= ($article['image']) ?>" alt="<?= ($article['descriptif_image'])?>">

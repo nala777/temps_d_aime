@@ -3,6 +3,7 @@
     <h1>Blog</h1>
     <section id="blog">
         <h2 id="section_blog">Les articles</h2>
+        <!-- boucle affichage des articles du blog -->
         <?php foreach($articles as $article){?>
             <article class="article">
                 <img src="<?= ($article['image']) ?>" alt="<?= ($article['descriptif_image'])?>">

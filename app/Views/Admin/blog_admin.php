@@ -7,6 +7,7 @@
 
 <section id="blog">
     <h2 id="section_blog">Article Publié</h2>
+        <!--boucle affichage des articles publiés -->
         <?php foreach($articles as $article){?>
             <article class="article">
                 <img  src="<?= ($article['image']) ?>" alt="<?=$article['image']?>">

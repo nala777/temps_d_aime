@@ -1,5 +1,6 @@
 <?php ob_start(); ?>
 <main class="container" id="propos">
+    <!-- boucle affichage les éléments page à propos -->
     <?php foreach($allPropos as $propos){ ?>
         <div class="a_propos">
             <img class="img_propos" src="<?= ($propos['image']) ?>" alt="<?= ($propos['descriptif_image'])?>">

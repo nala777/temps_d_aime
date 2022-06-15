@@ -10,6 +10,7 @@
             </tr>
         </thead>
         <tbody>
+            <!-- boucle affichage contact carnet d'addresse -->
             <?php foreach($contacts as $contact){ ?>
                 <tr>
                     <td><?= $contact['nom'] ?></td>

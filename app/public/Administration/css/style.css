@@ -1,3 +1,5 @@
+/* ----------------Paramètres Généraux--------------- */
+
 * {
   font-family: 'Roboto', sans-serif;
 }
@@ -45,7 +47,147 @@ a {
   text-decoration: none;
   transition: color 0.3s ease;
 }
+/* --------------------------------------Header------------------------------ */
 
+header {
+  background-color: black;
+}
+
+#entete_admin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+/* ---------------------------Menu----------------- */
+nav a {
+  color: white;
+}
+
+
+#menuToggle {
+  display: block;
+  position: relative;
+  width: 5%;
+  top: 2px;
+  left: 0;
+  z-index: 1;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -8px;
+
+  cursor: pointer;
+
+  opacity: 0;
+  z-index: 2;
+
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: white;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked~span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: white;
+}
+
+#menuToggle input:checked~span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked~span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+  position: absolute;
+  width: 200px;
+  border-radius: 0 0 22px 0;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background: #000000b0;
+  -webkit-font-smoothing: antialiased;
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+#menu li {
+  list-style-type: none;
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+#menu a {
+  color: white;
+}
+
+#menuToggle input:checked~ul {
+  transform: none;
+}
+
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+#menuToggle input:checked~ul {
+  transform: none;
+}
+
+#menu_desktop {
+  display: none;
+}
+
+#liste ul{
+  display: none;
+  list-style: none;
+}
+
+#liste:hover ul{
+  display: block;
+}
 /* -------------------------------------Connexion Admin----------------------- */
 
 #connexion_admin h1 {
@@ -93,182 +235,12 @@ a {
   transform: scale(1.05);
 }
 
-
-/* --------------------------------------Header------------------------------ */
-
-header {
-  background-color: black;
-}
-
-#entete_admin {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: white;
-}
-
-
-
-/* ---------------------------Menu----------------- */
-nav a {
-  color: white;
-}
-
-
-#menuToggle {
-  display: block;
-  position: relative;
-  width: 5%;
-  top: 2px;
-  left: 0;
-  z-index: 1;
-
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-#menuToggle input {
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  top: -7px;
-  left: -8px;
-
-  cursor: pointer;
-
-  opacity: 0;
-  /* hide this */
-  z-index: 2;
-  /* and place it over the hamburger */
-
-  -webkit-touch-callout: none;
-}
-
-/*
- * Just a quick hamburger
- */
-#menuToggle span {
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  position: relative;
-
-  background: white;
-  border-radius: 3px;
-
-  z-index: 1;
-
-  transform-origin: 4px 0px;
-
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-    opacity 0.55s ease;
-}
-
-#menuToggle span:first-child {
-  transform-origin: 0% 0%;
-}
-
-#menuToggle span:nth-last-child(2) {
-  transform-origin: 0% 100%;
-}
-
-/* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
-#menuToggle input:checked~span {
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: white;
-}
-
-/*
- * But let's hide the middle one.
- */
-#menuToggle input:checked~span:nth-last-child(3) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-/*
- * Ohyeah and the last one should go the other direction
- */
-#menuToggle input:checked~span:nth-last-child(2) {
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
-/*
- * Make this absolute positioned
- * at the top left of the screen
- */
-#menu {
-  position: absolute;
-  width: 200px;
-  border-radius: 0 0 22px 0;
-  margin: -100px 0 0 -50px;
-  padding: 50px;
-  padding-top: 125px;
-  background: #000000b0;
-  -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
-
-  transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
-
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-}
-
-#menu li {
-  list-style-type: none;
-  padding: 10px 0;
-  font-size: 22px;
-}
-
-#menu a {
-  color: white;
-}
-
-/*
- * And let's slide it in from the left
- */
-#menuToggle input:checked~ul {
-  transform: none;
-}
-
-
-#menu li {
-  padding: 10px 0;
-  font-size: 22px;
-}
-
-/*
- * And let's slide it in from the left
- */
-#menuToggle input:checked~ul {
-  transform: none;
-}
-
-#menu_desktop {
-  display: none;
-}
-
-#liste ul{
-  display: none;
-  list-style: none;
-}
-
-#liste:hover ul{
-  display: block;
-}
-
 /* ----------------------------------------ADMIN-------------------------*/
 
 
 /* ------------------------Dashboard-------------- */
 
+/* Stat dashboard */
 #stats {
   width: 100%;
   margin: 15px 0;
@@ -305,6 +277,7 @@ nav a {
   padding: 15px;
 }
 
+/* derniers articles blog */
 #articles {
   width: 100%;
   display: flex;
@@ -393,7 +366,7 @@ nav a {
   line-height: 1.6rem;
 }
 
-/* ----------------FORMULAIRE ADMIN ------------------------*/
+/* ----------------FORMULAIRE ADMIN pour update et create (blog/portfolio...) ------------------------*/
 
 #titre_form{
   text-align: center;
@@ -698,8 +671,10 @@ nav a {
   border: 3px solid var(--button-color)
 }
 
+/* ------------------------------PHONE XL/TABLET------------------------ */
 @media screen and (min-width: 600px) {
 
+  /* ------------BLOG--------------- */
   #blog {
     display: flex;
     flex-wrap: wrap;
@@ -710,6 +685,7 @@ nav a {
     width: 49%;
   }
 
+  /* --------------A PROPOS--------------- */
   .texte_propos {
     position: absolute;
     color: white;
@@ -721,6 +697,8 @@ nav a {
   .image_folio {
     width: 48%;
   }
+
+  /* Formulaire preview image */
 
   #preview{
     width: 400px;
@@ -735,8 +713,22 @@ nav a {
 
 }
 
+/* ----------------------TABLET---------------------- */
+
 @media screen and (min-width: 800px) {
 
+  /* stat dashboard */
+
+  #stats {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .stat {
+    width: 49%
+  }
+
+  /* page a propos */
   #propos {
     display: flex;
     flex-wrap: wrap;
@@ -748,6 +740,7 @@ nav a {
     margin: 6px auto;
   }
 
+  /* form catégorie blog */
   #categorie{
     display: block;
     margin-right: 15px;
@@ -764,15 +757,8 @@ nav a {
     width: 200px;
   }
 
-  #stats {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .stat {
-    width: 49%
-  }
-
+  
+  /* folio */
   .article {
     width: 49%;
   }
@@ -780,12 +766,13 @@ nav a {
   .image_folio {
     width: 32%;
   }
-
-
-
 }
 
+/* -------------------------DESKTOP---------------- */
+
 @media screen and (min-width: 1024px) {
+
+  /* menu ordi */
 
   #menuToggle {
     display: none;

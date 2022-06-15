@@ -4,6 +4,7 @@ namespace Projet\Models;
 
 class ServicesModel extends TempsDaimeOrm
 {
+    // affichage des différents services pour accueil
     public function afficheServices()
     {
         $bdd = $this->connect();

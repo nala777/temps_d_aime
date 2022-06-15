@@ -4,6 +4,7 @@ namespace Projet\Controllers;
 
 class FrontController
 {
+    // affichage accueil
     public function accueil()
     {   
         $propos = new \Projet\Models\AProposModel();
@@ -15,7 +16,7 @@ class FrontController
         $portfolio = $folio->afficheFolioAccueil();
         require "app/Views/Front/accueil.php";
     }
-
+    // envoie formulaire présent sur accueil
     public function accueilPost($name, $mail, $subject, $content)
     {
         $accueil = new \Projet\Models\AccueilModel();
@@ -30,7 +31,7 @@ class FrontController
             header('Location: app/Views/Front/erreur.php');
         }
     }
-
+    // affichage page a propos
     public function aPropos()
     {
         $propos = new \Projet\Models\AProposModel();
@@ -38,14 +39,7 @@ class FrontController
         require "app/Views/Front/a_propos.php";
     }
 
-
-    public function services()
-    {
-        $services = new \Projet\Models\ServicesModel();
-        $allServices = $services->afficheServices();
-        require "app/Views/Front/services.php";
-    }
-
+    // affichage portfolio
     public function portfolio()
     {
         $folio = new \Projet\Models\PortfolioModel();
@@ -54,13 +48,16 @@ class FrontController
         require "app/Views/Front/portfolio.php";
     }
 
+    // affichage page blog
     public function blog()
     {
         $article = new \Projet\Models\BlogModel();
         $articles = $article->afficheArticle();
         require "app/Views/Front/blog.php";
     }
-    
+
+
+    // affichage d'un article simple 
     public function article($idArticle)
     {
         $article = new \Projet\Models\BlogModel();
@@ -68,6 +65,7 @@ class FrontController
         require "app/Views/Front/article.php";
     }
 
+    // affichage mentions légales
     public function mentionsLegales()
     {
         require "app/Views/Front/mentions_legales.php";

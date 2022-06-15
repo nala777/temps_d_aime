@@ -12,6 +12,7 @@
         <main class="container">
             <section id="connexion_admin">
                 <h1>Connexion Administrateur</h1>
+                <!-- form connexion admin -->
                 <form action="indexAdmin.php?action=connexionAdmin" method="post">
                     <div>
                         <label for="email"> Email:</label>

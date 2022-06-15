@@ -14,6 +14,7 @@
 
     <section id="services">
         <h2 class="container">Les services</h2>
+            <!-- boubles derniers article -->
             <?php foreach($servicesAccueil as $service){?>
                 
                 <article class="service slides">
@@ -33,6 +34,7 @@
     <div id="background_folio">
         <section id="folio_accueil" class="container">
             <h2>Derniers Design</h2>
+            <!-- boucle derniers images portfolio -->
             <?php foreach($portfolio as $folio){?>
                 <div>
                     <img src="<?= $folio['image']?>" alt="<?= $folio['alt']?>">
@@ -40,7 +42,7 @@
             <?php }?>
         </section>
     </div>
-
+                <!-- formulaire contact -->
     <div id="container_formulaire_accueil">
         <div class="container" id="formulaire_desktop">
         <div id="texte_formulaire">

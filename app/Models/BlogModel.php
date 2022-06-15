@@ -4,6 +4,7 @@ namespace Projet\Models;
 
 class BlogModel extends TempsDaimeOrm
 {
+    // affiche de tout les articles
     public function afficheArticle()
     {
         $bdd = $this->connect();
@@ -12,6 +13,7 @@ class BlogModel extends TempsDaimeOrm
         return $req;
     }
 
+    // affiche un article
     public function article($idArticle)
     {
         $bdd = $this->connect();
@@ -20,6 +22,7 @@ class BlogModel extends TempsDaimeOrm
         return $req->fetch(); 
     }
 
+    // affichage des 3 derniers articles
     public function lastArticles()
     {
         $bdd = $this->connect();
@@ -27,12 +30,14 @@ class BlogModel extends TempsDaimeOrm
         return $req;
     }
 
+    // affiche les différentes catégories
     public function afficheCategories(){
         $bdd = $this->connect();
         $req = $bdd->query("SELECT categorie,id FROM categories");
         return $req;
     }
 
+    // envoie en bdd nouvelle article
     public function upload($data){
         $bdd = $this->connect();
         $req = $bdd->prepare("INSERT INTO blog (image,descriptif_image,id_categorie,titre,texte) VALUE (:image,:descriptif,:categorie,:titre,:texte)");
@@ -46,12 +51,14 @@ class BlogModel extends TempsDaimeOrm
         ));
     }
 
+    // ajouter une nouvelle catégorie
     public function ajoutCategorie($categorie){
         $bdd = $this->connect();
         $req = $bdd->prepare("INSERT INTO categories(categorie) VALUE (?)");
         $req->execute(array($categorie));
     }
 
+    // select pour pré-remplir formulaire update d'un article
     public function modifArticle($idArticle){
         $bdd = $this->connect();
         $req = $bdd->prepare("SELECT blog.id AS idArt,categorie,categories.id,image,descriptif_image,titre,texte FROM blog INNER JOIN categories ON categories.id = blog.id_categorie WHERE blog.id = ? ");
@@ -59,9 +66,9 @@ class BlogModel extends TempsDaimeOrm
         return $req->fetch();
     }
 
+    // update d'un article sans image
     public function updateArticle($data){
         $bdd = $this->connect();
-        // var_dump($categories);die;
         $req = $bdd->prepare("UPDATE blog SET descriptif_image = :descriptif  , titre = :titre, texte = :texte, id_categorie = :categorie WHERE id = :id");
         $req->execute(array(
             ":descriptif" => $data['descriptif'],
@@ -72,6 +79,7 @@ class BlogModel extends TempsDaimeOrm
         ));
     }
 
+    // update d'un article avec image
     public function updateArticleImg($data){
         $bdd = $this->connect();
         $req = $bdd->prepare("UPDATE blog SET image = :image , descriptif_image = :descriptif , titre = :titre, texte = :texte, id_categorie = :categorie WHERE id = :id");
@@ -85,6 +93,7 @@ class BlogModel extends TempsDaimeOrm
         ));
     }
 
+    // suppression d'un article
     public function supprimerArticle($idArticle){
         $bdd = $this->connect();
         $req = $bdd->prepare("DELETE FROM blog WHERE id = ?");

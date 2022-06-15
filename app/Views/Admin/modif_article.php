@@ -1,6 +1,7 @@
 <?php ob_start(); ?>
 <main class="container">
     <h1>Modification de l'article</h1>
+    <!-- form update article blog -->
     <form class="formulaire" action="indexAdmin.php?action=updateArticle&id=<?= $modif['idArt'] ;?>" method="POST" enctype="multipart/form-data">
         <input aria-label="image" type="file" name="file" id="upload_image" required>
         <div id="preview">

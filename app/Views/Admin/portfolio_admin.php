@@ -1,6 +1,7 @@
 <?php ob_start(); ?>
 <main class="container">
     <h1>Modification Portfolio</h1>
+    <!-- ajout portfolio -->
     <form class="formulaire" action="indexAdmin.php?action=ajout_folio" method="POST" enctype="multipart/form-data">
         <input aria-label="image" type="file" name="file" id="upload_image" required>
         <div id="preview">
@@ -15,6 +16,7 @@
         <button type="submit">Ajouter au Portfolio</button>
     </form>
     <div id="portfolio">
+        <!-- affichage des images publiés -->
         <?php foreach($portfolio as $folio){ ?>
             <div class="image_folio">
                 <img src="<?= $folio['image']?>" alt="<?= $folio['alt']?>">

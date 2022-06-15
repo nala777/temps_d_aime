@@ -1,13 +1,15 @@
 <?php
 
 namespace Projet\Controllers;
-
+// Tout ce qui concerne le côté admin 
 class AdminController
 {
+    // page connexion Admin
     public function connexionAdmin(){
         require 'app\Views\Admin\connexion_admin.php';
     }
 
+    // Créer compte admin
     function createAdmin($firstname,$lastname,$mdp, $mail)
     {
         $userManager = new \Projet\Models\AdminModel();
@@ -17,8 +19,9 @@ class AdminController
 
     }
 
+    // verif mot de passe pour connexion
     public function connexion($mail, $mdp)
-    { //recup du mot de pass
+    { //recup du mot de passe
         $userManager = new \Projet\Models\AdminModel();
         $contact = new \Projet\Models\ContactModel();
         $article = new \Projet\Models\BlogModel();
@@ -57,7 +60,7 @@ class AdminController
 
     
     
-    // Traitement de fichiers images
+    // Traitement de fichiers images ainsi que pour envoyer dans le dossier dédié aux images
 
     public function upload($file){
         $tmpName = $file['tmp_name'];
@@ -82,6 +85,7 @@ class AdminController
         }
     }
 
+    // affichage dashboard
     public function dashboard(){
         $contact = new \Projet\Models\ContactModel();
         $article = new \Projet\Models\BlogModel();
@@ -91,28 +95,28 @@ class AdminController
             
         require 'app/views/Admin/dashboard.php';
     }
-
+    // affichage carnet d'addresse
     public function voirContact(){
         $contact = new \Projet\Models\ContactModel();
         $contacts = $contact->voirContact();
 
         require 'app/Views/Admin/contact.php';
     }
-
+    // liste des mails reçu
     public function voirMails(){
         $contact = new \Projet\Models\ContactModel();
         $mails = $contact->voirMails();
 
         require 'app/Views/Admin/mails.php';
     }
-
+    // affichage d'un mail
     public function voirMail($idMail){
         $contact = new \Projet\Models\ContactModel();
         $mail = $contact->voirMail($idMail);
 
         require 'app/Views/Admin/mail.php';
     }
-
+    // delete un mail
     public function deleteMail($idMail){
 
         $contact = new \Projet\Models\ContactModel();
@@ -124,41 +128,32 @@ class AdminController
 
     //                                         A Propos
 
+    // affichage page a propos admin
     public function a_propos_admin(){
         $propos = new \Projet\Models\AProposModel();
         $allPropos = $propos->affichePropos();
         require "app/Views/Admin/a_propos_admin.php";
     }
-
+    // formulaire pour modifier un élément a propos
     public function a_propos_modif($idPropos){
         $propos = new \Projet\Models\AProposModel();
         $modifP = $propos->propos($idPropos);
         require "app/Views/Admin/modif_a_propos.php";
     }
-
+    // envoie formulaire update un élément de a propos sans image
     public function updatePropos($data){
         $propos = new \Projet\Models\AProposModel();
         $UpdateP = $propos->updatePropos($data);
         $allPropos = $propos->affichePropos();
         require "app/Views/Admin/a_propos_admin.php";
     }
-
+    // envoie formulaire update un élément de a propos avec image
     public function updateProposImg($data){
         $propos = new \Projet\Models\AProposModel();
         $UpdateP = $propos->updateProposImg($data);
         $allPropos = $propos->affichePropos();
         require "app/Views/Admin/a_propos_admin.php";
     }
-
-    //                                          Partie Services
-
-    public function services_admin(){
-        $services = new \Projet\Models\ServicesModel();
-        $service = $services->afficheServices();
-        require "app/Views/Admin/services_admin.php";
-    }
-
-
 
     //                                          Partie BLOG
 
@@ -168,6 +163,7 @@ class AdminController
     //     require "app/Views/Front/a_propos.php";
     // }
 
+    // affichage page blog
     public function blog_admin()
     {
         $article = new \Projet\Models\BlogModel();
@@ -175,7 +171,7 @@ class AdminController
         require "app/Views/Admin/blog_admin.php";
     }
 
-    // Ajouter nouvel article
+    // Formulaire Ajouter nouvel article
     
     public function ajout_blog()
     {
@@ -183,7 +179,7 @@ class AdminController
         $categories = $article->afficheCategories();
         require "app/Views/Admin/ajout_blog.php";
     }
-
+    // ajout nouvelle catégorie pour article blog
     public function ajout_categorie($categorie)
     {
         $article = new \Projet\Models\BlogModel();
@@ -192,6 +188,7 @@ class AdminController
         require "app/Views/Admin/ajout_blog.php";
     }
 
+    // envoie formulaire pour ajout article
     public function upload_article($data)
     {
         $article = new \Projet\Models\BlogModel();
@@ -200,7 +197,7 @@ class AdminController
         require "app/Views/Admin/blog_admin.php";
     }
 
-    // Update d'article
+    // Update d'article affichage formulaire
 
     public function modificationArticle($idArticle){
         $article = new \Projet\Models\BlogModel();
@@ -208,7 +205,7 @@ class AdminController
         $modif = $article->modifArticle($idArticle);
         require "app/Views/Admin/modif_article.php";
     }
-
+    // envoie formulaire update article sans image
     public function updateArticle($data){
         $article = new \Projet\Models\BlogModel();
         $article->updateArticle($data);
@@ -216,7 +213,7 @@ class AdminController
         require "app/Views/Admin/blog_admin.php";
 
     }
-
+    // envoie formulaire update article avec image
     public function updateArticleImg($data){
         $article = new \Projet\Models\BlogModel();
         $article->updateArticleImg($data);
@@ -237,7 +234,7 @@ class AdminController
 
     //                                     Partie PORTFOLIO
 
-    // Affichage Portfolio
+    // Affichage Portfolio admin
 
     public function afficheFolio()
     {
@@ -247,13 +244,13 @@ class AdminController
         require "app/Views/Admin/portfolio_admin.php";
     }
 
-    public function afficheFolioAccueil()
-    {
+    // public function afficheFolioAccueil()
+    // {
         
-        require "app/Views/Admin/portfolio_admin.php";
-    }
+    //     require "app/Views/Admin/portfolio_admin.php";
+    // }
 
-    // Upload Portfolio
+    // Upload sur Portfolio
     
     public function ajoutFolio($path,$descriptif,$categories)
     {
@@ -264,7 +261,7 @@ class AdminController
         require "app/Views/Admin/portfolio_admin.php";
 
     }
-
+    // suppression du portfolio
     public function suppressionFolio($idFolio)
     {
         $folio = new \Projet\Models\PortfolioModel();
