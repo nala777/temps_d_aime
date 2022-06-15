@@ -629,7 +629,7 @@ textarea {
 
 #txt-error a:hover {
   color: var(--button-color);
-  background-color: var(white);
+  background-color: white;
   border: 3px solid var(--button-color)
 }
 
