@@ -627,6 +627,77 @@ nav a {
   border: none;
 }
 
+/* ------------------------------Page 404 -------------------- */
+
+#page-404 {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: url('/app/public/Administration/img/404.jpg') no-repeat center;
+}
+
+#page-404 h1 {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+#txt-error {
+  width: 75%;
+  margin: 30px auto 0;
+  padding: 25px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid var(--button-color);
+  border-radius: 10px;
+  background-color: #1a1a1ab0;
+}
+
+#txt-error h1 {
+  width: 100%;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 0 auto 30px;
+}
+
+#txt-error p, #txt-error a {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#txt-error p {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#txt-error p:last-of-type {
+  margin-bottom: 25px;
+}
+
+#txt-error a {
+  width: 45%;
+  padding: 15px;
+  margin: 20px auto 5px;
+  border: 3px solid var(--button-color);
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#txt-error a:hover {
+  color: var(--button-color);
+  background-color: var(white);
+  border: 3px solid var(--button-color)
+}
+
 @media screen and (min-width: 600px) {
 
   #blog {

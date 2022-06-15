@@ -52,9 +52,9 @@ try{
         $frontController->accueil();
     }
 } catch(Exception $e){
-    require 'app/Views/Front/erreur.php';
+    require 'app/Views/Front/404.php';
 }catch(Error $e){
-    require 'app/Views/Front/erreur.php';
+    require 'app/Views/Front/404.php';
 }
 
 ?>
