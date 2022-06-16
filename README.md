@@ -46,8 +46,8 @@
 <p>J'ai utilisé Laragon ainsi et que heidiSql pour gérer la base de données sur le projet</p>
                     
 <ul>
-    <li>composer init sur le projet</li>
     <li>Cloner le projet : <a href="https://github.com/nala777/temps_d_aime.git">https://github.com/nala777/temps_d_aime.git</a></li>
+    <li>composer init sur le projet</li>
     <li>Installation de  Dotenv : composer require vlucas/phpdotenv</li>
     <li>Création d'un .env (un .env.example est mis à disposition pour aider)</li>
 </ul>
