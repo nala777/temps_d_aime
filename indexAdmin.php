@@ -150,7 +150,6 @@ try {
                         if (!empty($file) && (!empty($descriptif) && (!empty($titre) && (!empty($texte) && (!empty($categories)))))) {
                             $path=$backController->upload($file);
                             $data = [
-                                "id" => $idArticle,
                                 "image" => $path,
                                 "descriptif" => $descriptif,
                                 "categorie" => $categories,
@@ -175,9 +174,10 @@ try {
                         $titre = htmlspecialchars($_POST['titre']);
                         $texte = htmlspecialchars($_POST['texte']);
                         $categories = $_POST['categories'];
-                        
-                        if(!empty($file) && (!empty($descriptif) && (!empty($titre) && (!empty($texte) && (!empty($categories)))))){
-                            $file = $_FILES['file'];
+                        $file = $_FILES['file'];
+                        // var_dump($file);die;
+                        if(($file['name'] != "") && (!empty($descriptif) && (!empty($titre) && (!empty($texte) && (!empty($categories)))))){
+                            
                             $path=$backController->upload($file);
                             $data = [
                                 "id" => $idArticle,

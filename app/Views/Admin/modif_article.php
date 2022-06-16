@@ -3,7 +3,7 @@
     <h1>Modification de l'article</h1>
     <!-- form update article blog -->
     <form class="formulaire" action="indexAdmin.php?action=updateArticle&id=<?= $modif['idArt'] ;?>" method="POST" enctype="multipart/form-data">
-        <input aria-label="image" type="file" name="file" id="upload_image" required>
+        <input aria-label="image" type="file" name="file" id="upload_image">
         <div id="preview">
             <img id="previewImage" src="#" alt="Preview Image">
         </div>

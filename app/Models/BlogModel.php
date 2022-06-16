@@ -46,8 +46,7 @@ class BlogModel extends TempsDaimeOrm
             ":descriptif" => $data['descriptif'],
             ":titre" => $data['titre'],
             ":texte" => $data['texte'],
-            ":categorie" => $data['categorie'],
-            ":id" => $data['id']
+            ":categorie" => $data['categorie']
         ));
     }
 
